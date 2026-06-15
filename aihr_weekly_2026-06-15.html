@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI+HR周报 | 2026年6月15日（第24周）</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #f5f6f8;
+            color: #2c3e50;
+            line-height: 1.8;
+        }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            padding: 48px 24px 40px;
+            text-align: center;
+        }
+        .header .emoji { font-size: 48px; margin-bottom: 12px; }
+        .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; letter-spacing: 1px; }
+        .header .date { font-size: 15px; opacity: 0.75; font-weight: 400; }
+        .header .divider {
+            width: 60px; height: 3px;
+            background: #e74c3c;
+            margin: 20px auto 0;
+            border-radius: 2px;
+        }
+
+        /* Stats Row */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            max-width: 800px;
+            margin: -28px auto 0;
+            padding: 0 24px;
+            flex-wrap: wrap;
+        }
+        .stat-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 20px 28px;
+            text-align: center;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            min-width: 140px;
+            flex: 1;
+        }
+        .stat-card .num {
+            font-size: 32px;
+            font-weight: 800;
+            color: #e74c3c;
+            line-height: 1.2;
+        }
+        .stat-card .label {
+            font-size: 13px;
+            color: #7f8c8d;
+            margin-top: 4px;
+        }
+
+        /* Signal Banner */
+        .signal {
+            max-width: 800px;
+            margin: 28px auto 0;
+            padding: 0 24px;
+        }
+        .signal-inner {
+            background: linear-gradient(135deg, #fff5f5, #fff);
+            border-left: 4px solid #e74c3c;
+            border-radius: 8px;
+            padding: 18px 20px;
+            font-size: 15px;
+            color: #c0392b;
+            font-weight: 500;
+            line-height: 1.7;
+        }
+        .signal-inner .label {
+            font-size: 13px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+            color: #e74c3c;
+        }
+
+        /* Main Content */
+        .container {
+            max-width: 800px;
+            margin: 32px auto;
+            padding: 0 24px;
+        }
+
+        /* News Card */
+        .card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+            position: relative;
+        }
+        .card .number {
+            position: absolute;
+            top: -14px;
+            left: 24px;
+            background: #e74c3c;
+            color: #fff;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 700;
+        }
+        .card h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+            line-height: 1.4;
+        }
+        .card h2 a {
+            color: #1a1a2e;
+            text-decoration: none;
+            border-bottom: 2px solid transparent;
+            transition: border-color 0.2s;
+        }
+        .card h2 a:hover { border-bottom-color: #e74c3c; }
+        .card .meta {
+            font-size: 13px;
+            color: #95a5a6;
+            margin-bottom: 16px;
+        }
+        .card .section {
+            margin-bottom: 18px;
+        }
+        .card .section-title {
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .card .section-title .icon { font-size: 16px; }
+        .card .section p {
+            font-size: 14.5px;
+            color: #34495e;
+            line-height: 1.8;
+        }
+        .card .section.summary { border-left: 3px solid #3498db; padding-left: 14px; }
+        .card .section.hr-perspective { border-left: 3px solid #e74c3c; padding-left: 14px; }
+        .card .section.action { border-left: 3px solid #27ae60; padding-left: 14px; }
+
+        .card ul {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 6px;
+        }
+        .card ul li {
+            font-size: 14.5px;
+            color: #34495e;
+            margin-bottom: 6px;
+            padding-left: 16px;
+            position: relative;
+            line-height: 1.7;
+        }
+        .card ul li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: #e74c3c;
+            font-size: 12px;
+        }
+        .card .sources {
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid #ecf0f1;
+            font-size: 13px;
+            color: #95a5a6;
+        }
+        .card .sources a {
+            color: #3498db;
+            text-decoration: none;
+            margin-right: 12px;
+        }
+        .card .sources a:hover { text-decoration: underline; }
+
+        /* HR Summary */
+        .hr-summary {
+            background: linear-gradient(135deg, #fff5f5, #fff);
+            border: 1px solid #fadbd8;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-top: 32px;
+        }
+        .hr-summary h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: #c0392b;
+            margin-bottom: 14px;
+        }
+        .hr-summary p {
+            font-size: 14.5px;
+            color: #34495e;
+            line-height: 1.8;
+        }
+
+        /* Tip Card */
+        .tip-card {
+            background: linear-gradient(135deg, #e8f8f5, #d5f5e3);
+            border: 1px solid #a9dfbf;
+            border-radius: 12px;
+            padding: 22px 28px;
+            margin-top: 24px;
+        }
+        .tip-card .tip-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e8449;
+            margin-bottom: 8px;
+        }
+        .tip-card p {
+            font-size: 14.5px;
+            color: #2c3e50;
+            line-height: 1.8;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 32px 24px;
+            font-size: 13px;
+            color: #bdc3c7;
+        }
+        .footer a {
+            color: #95a5a6;
+            text-decoration: none;
+        }
+
+        @media (max-width: 600px) {
+            .header { padding: 32px 16px 28px; }
+            .header h1 { font-size: 22px; }
+            .stats { gap: 12px; }
+            .stat-card { padding: 14px 16px; min-width: 100px; }
+            .stat-card .num { font-size: 24px; }
+            .card { padding: 24px 20px; }
+            .card h2 { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<div class="header">
+    <div class="emoji">📰</div>
+    <h1>AI+HR 周报</h1>
+    <div class="date">2026年6月15日（第24周）· 6月9日—6月15日汇总</div>
+    <div class="divider"></div>
+</div>
+
+<!-- Stats -->
+<div class="stats">
+    <div class="stat-card">
+        <div class="num">7</div>
+        <div class="label">精选新闻</div>
+    </div>
+    <div class="stat-card">
+        <div class="num">39%</div>
+        <div class="label">HR部门AI采用率</div>
+    </div>
+    <div class="stat-card">
+        <div class="num">5.7×</div>
+        <div class="label">岗位转变 &gt; 裁员</div>
+    </div>
+</div>
+
+<!-- Signal -->
+<div class="signal">
+    <div class="signal-inner">
+        <div class="label">📡 本周信号</div>
+        AI治理从"软约束"走向"硬落地"——美国紧急关停前沿模型、欧盟AI法案8月强制执行，HR必须从"观望AI"转向"治理AI"，合规能力已成为HR数字化的新护城河。
+    </div>
+</div>
+
+<!-- Main Content -->
+<div class="container">
+
+    <!-- Card 1 -->
+    <div class="card">
+        <div class="number">1</div>
+        <h2><a href="https://www.shrm.org/topics-tools/research/state-of-ai-hr-2026/full-report" target="_blank">SHRM发布《AI in HR 2026》报告：39%HR部门已用AI，但过半不知从何开始</a></h2>
+        <div class="meta">📅 2026年6月 · 🏢 SHRM · 📊 1,908位HR专业人士调研</div>
+
+        <div class="section summary">
+            <div class="section-title"><span class="icon">📝</span> 概要</div>
+            <p>美国人力资源管理协会（SHRM）发布年度报告，基于1,908位HR专业人士调研：39%的HR部门已采用AI，另有7%计划今年启动。AI导致岗位职责转变的可能性是裁员的5.7倍，创造新岗位的可能性是裁员的3倍。但67%未采用AI的组织表示"不知从何开始"是最大障碍，56%的组织不正式衡量AI的成功。</p>
+        </div>
+
+        <div class="section hr-perspective">
+            <div class="section-title"><span class="icon">🔍</span> HR视角分析</div>
+            <p>这份报告是本周对HR从业者最直接的参考。三个核心发现值得关注：<strong>①招聘是AI在HR中应用最广的领域（27%）</strong>，但学习发展（17%）和员工体验（14%）正在快速追赶；<strong>②"AI FOMO"现象严重</strong>——32%已部署AI的HR仍觉得自己落后，可能导致仓促投资；<strong>③HR在AI治理中的角色被边缘化</strong>——仅16%认为HR应主导变革管理，法律与合规部门（37%）主导AI治理。这对HR数字化、培训发展、组织设计均有重大启示。</p>
+        </div>
+
+        <div class="section action">
+            <div class="section-title"><span class="icon">🎯</span> 行动建议</div>
+            <ul>
+                <li><strong>本周行动</strong>：用SHRM报告的"AI采用审计框架"梳理本部门3个最耗时的流程，评估哪些适合AI介入</li>
+                <li><strong>防FOMO</strong>：在采购任何AI工具前，先制定"AI采购评估清单"（含数据安全、ROI指标、员工接受度），避免因焦虑而盲目投资</li>
+                <li><strong>主动抢位</strong>：向管理层提议建立"AI治理跨职能小组"，确保HR在AI策略中有话语权，而非被动接受IT/法务的安排</li>
+            </ul>
+        </div>
+
+        <div class="sources">
+            来源：<a href="https://www.shrm.org/topics-tools/research/state-of-ai-hr-2026/full-report" target="_blank">SHRM</a> · <a href="https://mobdome.com/blog/shrm-ai-hr-industry-2026/" target="_blank">MobDome解读</a>
+        </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="card">
+        <div class="number">2</div>
+        <h2><a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank">美国政府紧急关停Claude Fable 5与Mythos 5：AI治理进入"硬约束"时代</a></h2>
+        <div class="meta">📅 2026年6月12日 · 🇺🇸 美国出口管制指令 · ⚡ 突发</div>
+
+        <div class="section summary">
+            <div class="section-title"><span class="icon">📝</span> 概要</div>
+            <p>6月12日，美国政府引用国家安全权限，紧急要求Anthropic关停旗下两款最前沿模型Fable 5和Mythos 5的全球访问。禁令覆盖面极广：不仅禁止境外用户，连美国境内的外籍员工也被切断访问。Anthropic表示，政府援引的"越狱"漏洞并非这两款模型独有，而是行业通用问题，严苛标准若推广将导致所有前沿AI公司停摆。</p>
+        </div>
+
+        <div class="section hr-perspective">
+            <div class="section-title"><span class="icon">🔍</span> HR视角分析</div>
+            <p>这是AI治理从"软约束"走向"硬约束"的标志性事件。<strong>对员工关系</strong>：外籍员工可能因身份被限制使用某些AI工具，这是全新的职场公平议题；<strong>对HR数字化</strong>：企业依赖的AI服务可能随时被政府指令关停，需要建立"多供应商+本地部署"的弹性架构；<strong>对合规</strong>：AI出口管制已成为企业合规新领域，HR需要与法务共同制定"AI工具使用合规政策"。</p>
+        </div>
+
+        <div class="section action">
+            <div class="section-title"><span class="icon">🎯</span> 行动建议</div>
+            <ul>
+                <li><strong>本周行动</strong>：盘点公司当前使用的AI工具清单，标注每款工具的供应商国别与数据存储位置，评估"突发关停"风险</li>
+                <li><strong>政策预研</strong>：与法务部门沟通，了解公司是否涉及使用受出口管制影响的前沿AI模型</li>
+                <li><strong>员工沟通</strong>：如公司有外籍员工使用Claude等工具，需提前准备替代方案和说明</li>
+            </ul>
+        </div>
+
+        <div class="sources">
+            来源：<a href="https://www.anthropic.com/news/fable-mythos-access" target="_blank">Anthropic官方声明</a> · <a href="https://jandan.net/p/122939/" target="_blank">煎蛋解读</a>
+        </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="card">
+        <div class="number">3</div>
+        <h2><a href="https://finance.sina.com.cn/tech/roll/2026-06-12/doc-iniceccp0196871.shtml" target="_blank">北京智源大会：发布"悟界"系列大模型，AI从数字世界迈向物理世界</a></h2>
+        <div class="meta">📅 2026年6月12-13日 · 🇨🇳 智源研究院 · 🤖 5款模型+4款智能体</div>
+
+        <div class="section summary">
+            <div class="section-title"><span class="icon">📝</span> 概要</div>
+            <p>第八届北京智源大会发布"悟界"系列5款大模型，核心观点：AI正从"预测下一个词元"转向"预测下一个物理状态"。其中Physis-v0.1是全球首个通用世界基座模型，支持50+复杂物理场景长程推理；RoboBrain Orca实现"想、看、动"三位一体的具身大脑；Brainμ1.0是全球首个多模态神经科学大模型（登刊Science）。同时发布4款智能体，包括心脏诊断智能体（AUC超0.93）和个人专属智能体SoulAgent。</p>
+        </div>
+
+        <div class="section hr-perspective">
+            <div class="section-title"><span class="icon">🔍</span> HR视角分析</div>
+            <p>智源大会释放的关键信号：<strong>AI Agent时代全面开启</strong>。SoulAgent（个人专属智能体）意味着未来每个员工都可能拥有AI"工作助手"，<strong>对培训发展</strong>：AI可承担一对一辅导角色，但HR需设计"人机协作培训"体系；<strong>对绩效管理</strong>：当AI承担越来越多"想、看、动"任务，如何衡量"人+AI"混合绩效将成为新课题；<strong>对招聘</strong>：具身智能产业化将催生全新的岗位类别（机器人训练师、AI Agent运营师等）。</p>
+        </div>
+
+        <div class="section action">
+            <div class="section-title"><span class="icon">🎯</span> 行动建议</div>
+            <ul>
+                <li><strong>本周行动</strong>：在培训体系中增加"AI Agent协作"模块，让员工体验1-2个常用智能体工具（如Microsoft Copilot），建立人机协作直觉</li>
+                <li><strong>前瞻布局</strong>：关注"具身智能"相关岗位（机器人运维、AI Agent训练师），提前储备人才画像</li>
+                <li><strong>绩效预研</strong>：启动"AI辅助岗位的绩效评估标准"研究，当AI承担30%+工作量时，KPI该如何调整</li>
+            </ul>
+        </div>
+
+        <div class="sources">
+            来源：<a href="https://finance.sina.com.cn/tech/roll/2026-06-12/doc-iniceccp0196871.shtml" target="_blank">新浪科技</a> · <a href="https://finance.sina.com.cn/roll/2026-06-13/doc-inichnkk9406578.shtml" target="_blank">环球网</a>
+        </div>
+    </div>
+
+    <!-- Card 4 -->
+    <div class="card">
+        <div class="number">4</div>
+        <h2><a href="https://www.sohu.com/a/1033861706_121124377" target="_blank">GPT-5.6与Mythos 5双双泄露：AI模型迭代进入"40天一版"极速周期</a></h2>
+        <div class="meta">📅 2026年6月10日 · 🏢 OpenAI & Anthropic · 🔄 模型军备竞赛</div>
+
+        <div class="section summary">
+            <div class="section-title"><span class="icon">📝</span> 概要</div>
+            <p>6月上旬，OpenAI Codex后端日志短暂暴露GPT-5.6，Anthropic开发者工具中Mythos 5闪现又秒删。GPT-5.5发布仅一个多月，5.6就已进入候选版阶段；Claude Opus系列还在窗口期，Mythos 5的蛛丝马迹已从开发者工具泄露。两大巨头的模型迭代速度刷新纪录，约40天一个版本。</p>
+        </div>
+
+        <div class="section hr-perspective">
+            <div class="section-title"><span class="icon">🔍</span> HR视角分析</div>
+            <p>模型迭代加速对HR产生三层影响：<strong>①培训发展</strong>：员工AI技能的"半衰期"在缩短——3个月前学的Prompt技巧可能已经过时，培训体系必须从"学完即用"转向"持续微学"；<strong>②招聘</strong>：企业需要的是"能快速适应新AI工具"的学习能力，而非"精通某一款AI工具"的静态技能，JD中应强调学习能力而非特定工具经验；<strong>③薪酬</strong>：AI技能溢价波动加大，薪酬体系需更灵活地响应技能市场变化。</p>
+        </div>
+
+        <div class="section action">
+            <div class="section-title"><span class="icon">🎯</span> 行动建议</div>
+            <ul>
+                <li><strong>本周行动</strong>：审查现有JD模板，将"精通XX AI工具"改为"具备快速学习AI工具的能力"，并在面试中增加"AI工具快速上手"情景测试</li>
+                <li><strong>培训升级</strong>：将AI培训从"单次集中培训"改为"每月15分钟AI新功能速递"，保持员工AI素养持续更新</li>
+                <li><strong>技能追踪</strong>：建立"AI技能雷达图"，每季度评估团队AI工具掌握度与业务匹配度</li>
+            </ul>
+        </div>
+
+        <div class="sources">
+            来源：<a href="https://www.sohu.com/a/1033861706_121124377" target="_blank">搜狐科技</a> · <a href="https://news.qq.com/rain/a/20260610A061J200" target="_blank">腾讯新闻</a>
+        </div>
+    </div>
+
+    <!-- Card 5 -->
+    <div class="card">
+        <div class="number">5</div>
+        <h2><a href="https://finance.sina.com.cn/jjxw/2026-06-10/doc-iniawttu6036132.shtml" target="_blank">Anthropic与OpenAI竞速IPO：AI产业进入万亿资本收割期</a></h2>
+        <div class="meta">📅 2026年6月 · 💰 估值9650亿美元 · 🏦 全球超级IPO潮</div>
+
+        <div class="section summary">
+            <div class="section-title"><span class="icon">📝</span> 概要</div>
+            <p>Anthropic以9650亿美元估值超越OpenAI（8520亿美元），秘密递交S-1上市申请，最快秋季上市。与此同时，中国大模型"双雄"智谱与MiniMax先后启动A股征程，SpaceX也推进2万亿美元估值上市。高盛预测，2025-2030年四大科技巨头AI总支出将达5.3万亿美元。AI从创业赛道正式进入产业资本收割阶段。</p>
+        </div>
+
+        <div class="section hr-perspective">
+            <div class="section-title"><span class="icon">🔍</span> HR视角分析</div>
+            <p>AI公司IPO潮对HR的影响是深远的：<strong>①薪酬竞争</strong>：上市后的AI公司将用股权激励大规模争夺人才，传统企业薪酬体系面临更大压力；<strong>②雇主品牌</strong>：AI上市公司的高曝光度将重塑人才流向，"去AI公司"成为更多技术人才的首选；<strong>③招聘策略</strong>：企业需要重新定义"AI人才"——不再仅指AI工程师，还包括能用AI提升业务效率的"AI应用型人才"。<strong>对薪酬福利</strong>：需要评估是否引入"AI技能津贴"或"AI项目奖金"来留人。</p>
+        </div>
+
+        <div class="section action">
+            <div class="section-title"><span class="icon">🎯</span> 行动建议</div>
+            <ul>
+                <li><strong>本周行动</strong>：调研同行业AI相关岗位的薪酬变化趋势，评估本公司的AI人才薪酬竞争力</li>
+                <li><strong>留人策略</strong>：为核心技术人才设计"AI项目专项激励"，减少被IPO后的AI公司挖角风险</li>
+                <li><strong>雇主品牌</strong>：在公司招聘页面突出"AI赋能"工作方式，吸引重视AI应用环境的候选人</li>
+            </ul>
+        </div>
+
+        <div class="sources">
+            来源：<a href="https://finance.sina.com.cn/jjxw/2026-06-10/doc-iniawttu6036132.shtml" target="_blank">新浪财经</a> · <a href="https://www.51cto.com/article/845045.html" target="_blank">51CTO</a>
+        </div>
+    </div>
+
+    <!-- Card 6 -->
+    <div class="card">
+        <div class="number">6</div>
+        <h2><a href="https://finance.sina.com.cn/jjxw/2026-06-11/doc-iniaysky2372605.shtml" target="_blank">AI冲击就业引发社会焦虑：毕业生嘘声AI演讲者，职场"K型分化"加剧</a></h2>
+        <div class="meta">📅 2026年6月11日 · 📰 纽约时报专题 · 👥 就业与社会影响</div>
+
+        <div class="section summary">
+            <div class="section-title"><span class="icon">📝</span> 概要</div>
+            <p>《纽约时报》组织专题讨论AI对就业市场的影响。2026年5月，美国多所高校毕业典礼上出现毕业生对AI话题演讲者发出嘘声的现象，反映出年轻一代对AI替代就业的深层焦虑。职场呈现"K型分化"：掌握AI技能的员工薪资涨幅达50%，而低技能岗位面临缩减。中国报告指出人才缺口500万与岗位替代并存。</p>
+        </div>
+
+        <div class="section hr-perspective">
+            <div class="section-title"><span class="icon">🔍</span> HR视角分析</div>
+            <p>这是本周对<strong>员工关系和组织文化</strong>影响最大的新闻。毕业生嘘声反映出代际焦虑——年轻员工可能对公司的AI推行持抵触态度。<strong>对员工关系</strong>：HR需要正视"AI焦虑"而非回避，建立开放的对话渠道；<strong>对培训发展</strong>：K型分化的核心解法是"不让任何人掉队"——为所有层级员工提供AI技能提升通道，而非只投资高潜力员工；<strong>对绩效管理</strong>：需要在评估中区分"因AI工具不足导致的效率差距"和"个人能力差距"。</p>
+        </div>
+
+        <div class="section action">
+            <div class="section-title"><span class="icon">🎯</span> 行动建议</div>
+            <ul>
+                <li><strong>本周行动</strong>：发起一次匿名"AI态度调查"，了解员工对AI的真实感受（期待/焦虑/抵触），为后续沟通提供数据支撑</li>
+                <li><strong>消除分化</strong>：设计"AI入门伙伴计划"，让已掌握AI工具的员工一对一帮助未入门的同事，降低学习门槛</li>
+                <li><strong>沟通升级</strong>：在公司内部沟通中，将"AI提升效率"的叙事调整为"AI释放人的创造力"，减少替代焦虑</li>
+            </ul>
+        </div>
+
+        <div class="sources">
+            来源：<a href="https://finance.sina.com.cn/jjxw/2026-06-11/doc-iniaysky2372605.shtml" target="_blank">新浪财经/纽约时报</a> · <a href="https://www.sohu.com/a/1021020358_120594060" target="_blank">搜狐：K型分化</a>
+        </div>
+    </div>
+
+    <!-- Card 7 -->
+    <div class="card">
+        <div class="number">7</div>
+        <h2><a href="https://chinawto.mofcom.gov.cn/article/jsbl/dtxx/202602/20260203618535.shtml" target="_blank">欧盟AI法案8月2日全面生效：跨国企业HR合规进入倒计时</a></h2>
+        <div class="meta">📅 2026年6月 · 🇪🇺 欧盟 · ⚖️ 合规截止日倒计时47天</div>
+
+        <div class="section summary">
+            <div class="section-title"><span class="icon">📝</span> 概要</div>
+            <p>欧盟《人工智能法案》（AI Act）高风险AI系统的完整合规要求将于2026年8月2日全面生效并开始执法。法案对AI生成内容设置透明度义务，对高风险系统（含招聘、绩效评估AI）要求严格评估。欧盟委员会正在敲定AI生成内容标记和标签的实践守则，最终版本预计6月发布。欧洲议会3月已通过首次修法，在监管减负与边界扩展间博弈。</p>
+        </div>
+
+        <div class="section hr-perspective">
+            <div class="section-title"><span class="icon">🔍</span> HR视角分析</div>
+            <p>欧盟AI法案对HR的影响最为直接——<strong>招聘AI和绩效评估AI均被列为"高风险系统"</strong>，需满足严格合规要求。<strong>对招聘</strong>：使用AI简历筛选、视频面试分析等工具的企业，必须确保算法透明、可解释、无歧视；<strong>对绩效管理</strong>：AI辅助绩效评估必须有人工复核环节，不能完全自动化决策；<strong>对HR数字化</strong>：即使中国企业不在欧盟境内，若服务欧盟客户或雇佣欧盟员工，也需合规。SHRM报告显示，57%的HR不知道本州已有AI就业法规——合规意识严重不足。</p>
+        </div>
+
+        <div class="section action">
+            <div class="section-title"><span class="icon">🎯</span> 行动建议</div>
+            <ul>
+                <li><strong>本周行动</strong>：如公司使用AI招聘工具（简历筛选、面试AI等），立即与法务确认是否涉及欧盟合规要求</li>
+                <li><strong>47天倒计时</strong>：制定"EU AI Act合规自查清单"——逐项检查招聘/绩效AI工具的算法透明度、人工复核机制、数据留存策略</li>
+                <li><strong>供应商审计</strong>：向AI招聘工具供应商索取"合规声明"，确认其产品是否符合EU AI Act高风险系统要求</li>
+            </ul>
+        </div>
+
+        <div class="sources">
+            来源：<a href="https://chinawto.mofcom.gov.cn/article/jsbl/dtxx/202602/20260203618535.shtml" target="_blank">商务部WTO咨询网</a> · <a href="https://reg-lab.com/eu-ai-act-compliance-guide/" target="_blank">合规指南</a> · <a href="https://aiactinfo.eu/" target="_blank">AI Act Info</a>
+        </div>
+    </div>
+
+    <!-- HR Summary -->
+    <div class="hr-summary">
+        <h3>🔎 本周HR视角总结</h3>
+        <p>本周AI行业释放了一个清晰的信号：<strong>AI正在从"技术工具"升级为"制度基础设施"</strong>。美国紧急关停前沿模型、欧盟AI法案即将强制执行，标志着AI治理从行业自律进入法律强制阶段。对HR而言，这意味着三个转变：</p>
+        <p><strong>①从"用AI"到"治理AI"</strong>：不仅要推动AI工具落地，更要建立AI使用合规框架，避免法律风险；</p>
+        <p><strong>②从"技能焦虑"到"体系赋能"</strong>：模型40天一迭代，单次培训已无法跟上，需要建立"持续微学"机制；</p>
+        <p><strong>③从"岗位替代"到"岗位重构"</strong>：SHRM数据证实AI更多在重塑岗位而非消灭岗位，HR的核心工作是为员工搭建"AI转型阶梯"。</p>
+    </div>
+
+    <!-- Tip -->
+    <div class="tip-card">
+        <div class="tip-title">💡 本周HR小贴士</div>
+        <p>试试在下次团队周会中增加5分钟的"AI工具分享时刻"——让一位同事展示ta这周用AI提效的具体案例。比起正式培训，这种"同事教同事"的微学习方式更能降低AI焦虑、激发实际应用，还能帮你发现哪些部门在"偷偷用AI"。</p>
+    </div>
+
+</div>
+
+<!-- Footer -->
+<div class="footer">
+    <p>⚠️ 免责声明：本简报信息来源于公开渠道，仅供参考，不构成任何投资或决策建议。</p>
+    <p style="margin-top: 8px;">AI+HR 周报 · 每周一推送 · 由 Y.BOT 智能生成</p>
+</div>
+
+</body>
+</html>
