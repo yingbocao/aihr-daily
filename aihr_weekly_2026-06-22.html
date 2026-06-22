@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>📰 AI+HR周报 | 2026年6月22日（第25周）</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif; background: #f5f6f8; color: #333; line-height: 1.7; }
+  .container { max-width: 720px; margin: 0 auto; padding: 0 16px; }
+
+  /* Header */
+  .header { background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); color: #fff; padding: 40px 24px 32px; border-radius: 16px 16px 0 0; margin-top: 16px; position: relative; overflow: hidden; }
+  .header::before { content: ''; position: absolute; top: -40px; right: -40px; width: 160px; height: 160px; background: rgba(255,255,255,0.05); border-radius: 50%; }
+  .header h1 { font-size: 28px; font-weight: 700; letter-spacing: 1px; }
+  .header .subtitle { font-size: 14px; color: rgba(255,255,255,0.7); margin-top: 8px; }
+  .header .week-badge { display: inline-block; background: rgba(255,255,255,0.15); border-radius: 20px; padding: 4px 14px; font-size: 13px; margin-top: 10px; }
+
+  /* Stats Card */
+  .stats-row { display: flex; gap: 12px; margin: 16px 0; }
+  .stat-card { flex: 1; background: #fff; border-radius: 12px; padding: 16px; text-align: center; box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+  .stat-card .stat-num { font-size: 28px; font-weight: 800; color: #e53935; }
+  .stat-card .stat-label { font-size: 12px; color: #888; margin-top: 4px; }
+
+  /* Signal Banner */
+  .signal-banner { background: linear-gradient(90deg, #e53935 0%, #c62828 100%); color: #fff; padding: 18px 20px; border-radius: 12px; margin: 16px 0; font-size: 15px; position: relative; }
+  .signal-banner .signal-tag { display: inline-block; background: rgba(255,255,255,0.2); border-radius: 4px; padding: 2px 10px; font-size: 12px; margin-bottom: 6px; }
+  .signal-banner strong { font-size: 16px; }
+
+  /* News Cards */
+  .news-card { background: #fff; border-radius: 12px; padding: 24px; margin-bottom: 14px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); position: relative; border-left: 4px solid #e53935; }
+  .news-card .card-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
+  .news-card .card-num { background: #e53935; color: #fff; border-radius: 8px; padding: 2px 10px; font-size: 13px; font-weight: 700; }
+  .news-card .card-date { font-size: 12px; color: #999; }
+  .news-card h2 { font-size: 18px; font-weight: 700; color: #1a1a2e; line-height: 1.4; }
+  .news-card .source-link { display: inline-block; font-size: 12px; color: #0366d6; margin-top: 4px; text-decoration: none; }
+  .news-card .source-link:hover { text-decoration: underline; }
+  .news-card .summary { font-size: 14px; color: #555; margin: 12px 0; padding: 10px 14px; background: #f8f9fa; border-radius: 8px; }
+
+  .hr-section { margin-top: 16px; }
+  .hr-section .hr-tag { display: inline-block; background: #e53935; color: #fff; border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 600; margin-right: 6px; }
+  .hr-section .hr-title { font-size: 14px; font-weight: 600; color: #1a1a2e; margin-bottom: 6px; }
+  .hr-section .hr-content { font-size: 13px; color: #666; }
+
+  .action-section { margin-top: 12px; padding: 12px 14px; background: #fff8e1; border-radius: 8px; }
+  .action-section .action-tag { display: inline-block; background: #f9a825; color: #fff; border-radius: 4px; padding: 2px 8px; font-size: 11px; font-weight: 600; }
+  .action-section .action-content { font-size: 13px; color: #555; margin-top: 6px; }
+
+  /* Tip */
+  .tip-box { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: #fff; border-radius: 12px; padding: 20px 24px; margin: 16px 0; }
+  .tip-box .tip-tag { font-size: 12px; background: rgba(255,255,255,0.2); border-radius: 4px; padding: 2px 10px; display: inline-block; margin-bottom: 8px; }
+  .tip-box .tip-content { font-size: 15px; font-weight: 500; }
+
+  /* Footer */
+  .footer { text-align: center; padding: 24px; font-size: 12px; color: #aaa; }
+  .footer a { color: #0366d6; text-decoration: none; }
+
+  /* Responsive */
+  @media (max-width: 480px) {
+    .header h1 { font-size: 22px; }
+    .stats-row { flex-direction: column; }
+    .news-card { padding: 16px; }
+    .news-card h2 { font-size: 16px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <h1>📰 AI+HR周报</h1>
+    <div class="subtitle">2026年6月22日 · 6月15日—22日新闻汇总</div>
+    <div class="week-badge">第25周</div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-card">
+      <div class="stat-num">7</div>
+      <div class="stat-label">精选新闻</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">5</div>
+      <div class="stat-label">HR模块覆盖</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">7</div>
+      <div class="stat-label">行动建议</div>
+    </div>
+  </div>
+
+  <!-- Signal -->
+  <div class="signal-banner">
+    <div class="signal-tag">🔥 本周信号</div>
+    <strong>AI人才争夺进入"诺贝尔级"——从燧原IPO到Jumper跳槽，HR的核心命题从"招得到人"转向"留得住顶尖人才"</strong>
+  </div>
+
+  <!-- News 1 -->
+  <div class="news-card">
+    <div class="card-header">
+      <span class="card-num">01</span>
+      <span class="card-date">6月19日</span>
+    </div>
+    <h2>诺贝尔奖得主John Jumper离开DeepMind加盟Anthropic</h2>
+    <a class="source-link" href="https://so.html5.qq.com/page/real/search_news?docid=70000021_5406a37627b97852" target="_blank">来源：腾讯新闻</a>
+    <div class="summary">
+      AlphaFold核心贡献者、2024年诺贝尔化学奖得主John Jumper宣布离开工作近9年的Google DeepMind，加入Anthropic。Jumper在X平台发文称这是"人生最重要的决定之一"。此举标志着AI安全赛道对顶尖科研人才的吸引力已超越AI应用赛道。
+    </div>
+    <div class="hr-section">
+      <span class="hr-tag">招聘</span><span class="hr-tag">留人</span><span class="hr-tag">雇主品牌</span>
+      <div class="hr-title">HR视角：顶尖人才从"应用"转向"安全"——组织价值观成为新磁石</div>
+      <div class="hr-content">Jumper的选择表明，AI行业的人才流动正在从"做大模型"转向"做安全AI"，Anthropic的AI安全使命正在成为比Google的规模优势更强的雇主品牌要素。对HR而言，这意味着：企业的使命叙事和价值观定位，正在成为吸引和留住顶尖人才的第一竞争力，超越了薪酬和平台规模。</div>
+    </div>
+    <div class="action-section">
+      <span class="action-tag">💡 行动建议</span>
+      <div class="action-content">本周审视你的雇主品牌叙事——是否清晰表达了组织的AI伦理立场和安全承诺？在JD中加入"AI安全/负责任AI"相关表述，用使命感而非纯薪资打动高端候选人。同时评估核心科研人才的离职风险：他们是否因为"安全使命"而正在被Anthropic类企业挖角？</div>
+    </div>
+  </div>
+
+  <!-- News 2 -->
+  <div class="news-card">
+    <div class="card-header">
+      <span class="card-num">02</span>
+      <span class="card-date">6月15日</span>
+    </div>
+    <h2>燧原科技科创板IPO过会：国产AI芯片"四小龙"齐聚资本市场</h2>
+    <a class="source-link" href="https://stock.10jqka.com.cn/20260616/c677496695.shtml" target="_blank">来源：同花顺财经</a>
+    <div class="summary">
+      6月15日，上海燧原科技股份有限公司科创板IPO获上交所审议通过。燧原科技成立8年，自研迭代四代架构5款云端AI芯片，三年营收复合增长超80%。随着燧原过会，国产AI算力芯片"四小龙"（寒武纪、壁仞、沐曦、燧原）齐聚资本市场，国产AI算力替代进入加速期。
+    </div>
+    <div class="hr-section">
+      <span class="hr-tag">招聘</span><span class="hr-tag">薪酬</span><span class="hr-tag">人才规划</span>
+      <div class="hr-title">HR视角：国产AI芯片赛道引爆——新一轮人才争夺即将打响</div>
+      <div class="hr-content">燧原IPO意味着国产AI芯片公司将从"创业期"进入"上市扩张期"，必然开启大规模人才招募。AI芯片赛道与互联网大厂的AI岗位将形成双向竞争：芯片企业需要算法+硬件交叉人才，薪酬结构将从期权激励转向现金+股票混合。HR需要提前预判：你的核心技术人才是否会被芯片赛道的高估值期权吸引？</div>
+    </div>
+    <div class="action-section">
+      <span class="action-tag">💡 行动建议</span>
+      <div class="action-content">本周盘点组织中具备"AI+硬件/芯片"交叉能力的关键人才，提前制定留人方案（如保留期权池、调整薪酬对标）。招聘侧：密切关注燧原等芯片企业的JD动态，反向学习他们的岗位设计思路——"AI芯片验证工程师""算力调度算法工程师"等新岗位正在定义人才市场的新标尺。</div>
+    </div>
+  </div>
+
+  <!-- News 3 -->
+  <div class="news-card">
+    <div class="card-header">
+      <span class="card-num">03</span>
+      <span class="card-date">6月数据</span>
+    </div>
+    <h2>AI岗位暴涨12倍月薪6万招不到人：人才缺口达50万</h2>
+    <a class="source-link" href="https://baijiahao.baidu.com/s?id=1868467121496830525" target="_blank">来源：百度百家号/智联招聘报告</a>
+    <div class="summary">
+      智联招聘6月报告显示：2026年AI新发岗位同比增长约12倍，AI岗位占新经济总岗位比例从2025年的2.29%飙升至26.23%，人才供需比0.97（接近供不应求）。AI岗位平均月薪60,738元，薪资溢价高出行业均值26%。AI大模型岗位薪资逆势涨幅150%。国内AI核心技术人才缺口约50万人，AI Agent开发工程师、RAG开发工程师、大模型辅助运维为最缺岗位。
+    </div>
+    <div class="hr-section">
+      <span class="hr-tag">招聘</span><span class="hr-tag">薪酬</span><span class="hr-tag">培训</span>
+      <div class="hr-title">HR视角：供需倒挂已成常态——HR必须从"外部抢人"转向"内部育人"</div>
+      <div class="hr-content">AI人才供需比0.97意味着市场已进入"一将难求"状态，纯粹靠高薪抢人的策略边际效益递减。更值得关注的是：最缺的三个岗位（Agent开发、RAG、大模型运维）中，"大模型辅助运维"被标注为"小白友好，20K-35K起步"，说明入门级AI岗位正在出现——这是内部转岗培训的最佳切入点。</div>
+    </div>
+    <div class="action-section">
+      <span class="action-tag">💡 行动建议</span>
+      <div class="action-content">本周启动"AI岗位内部转岗计划"：挑选5-8名有编程基础/数据分析能力的员工，按报告中的"90天学习路径"（10天Prompt工程→30天RAG/Agent→30天模型微调→20天商业落地）制定培训计划。同时调整薪酬策略：核心AI岗位对标6万月薪基准，入门AI运维岗对标2-3.5万，建立清晰的AI岗位薪酬梯度。</div>
+    </div>
+  </div>
+
+  <!-- News 4 -->
+  <div class="news-card">
+    <div class="card-header">
+      <span class="card-num">04</span>
+      <span class="card-date">6月10-15日</span>
+    </div>
+    <h2>北森vs Moka：2026年HR系统选型核心标准从"功能清单"转向"AI原生"</h2>
+    <a class="source-link" href="https://www.kejixun.co/article/754658.html" target="_blank">来源：科技讯</a>
+    <a class="source-link" href="https://news.sina.cn/sx/2026-06-10/detail-iniavmyp4947958.d.html?vt=4" target="_blank">来源：新浪科技</a>
+    <div class="summary">
+      多家媒体6月发布北森与Moka深度对比文章，揭示2026年HR系统市场的根本性分化：AI能力不再是"加分项"，而是划分产品代际的核心标尺。北森走"AI原生一体化"路线——从数据层、模型层到应用层围绕AI一体化设计；Moka走"轻量化招聘+AI增强"路线——聚焦招聘场景快速落地。底层逻辑的差距不是功能多少，而是架构是否AI原生。
+    </div>
+    <div class="hr-section">
+      <span class="hr-tag">HR数字化</span><span class="hr-tag">招聘</span><span class="hr-tag">绩效</span>
+      <div class="hr-title">HR视角：HR系统选型进入"代际决策"——选AI增强还是AI原生，决定3年后你的数字化天花板</div>
+      <div class="hr-content">这不再是"哪个功能多"的选择，而是"你的HR系统架构能否支撑AI Agent自主运转"的战略判断。AI增强系统（Moka路线）适合短期快速提效，但AI原生系统（北森路线）能让HR模块之间共享统一AI模型底座——招聘数据自动喂养绩效分析，培训推荐联动人才画像。选型决策要看3年后的AI能力天花板。</div>
+    </div>
+    <div class="action-section">
+      <span class="action-tag">💡 行动建议</span>
+      <div class="action-content">本周组织HR数字化选型讨论会，核心议题不是"功能对比表"，而是三个问题：①你的系统是否支持AI Agent跨模块自主调度？②数据底座是否统一（招聘、绩效、培训共用一个人才画像）？③未来3年你的AI能力天花板在哪？把这三个问题作为选型的"代际门槛"，而非功能清单。</div>
+    </div>
+  </div>
+
+  <!-- News 5 -->
+  <div class="news-card">
+    <div class="card-header">
+      <span class="card-num">05</span>
+      <span class="card-date">6月17日</span>
+    </div>
+    <h2>2026世界人工智能大会7月17-20日上海举办：超300款AI产品全球首发</h2>
+    <a class="source-link" href="https://so.html5.qq.com/page/real/search_news?docid=70000021_0166a3357ce76452" target="_blank">来源：央视新闻/腾讯新闻</a>
+    <div class="summary">
+      国务院新闻办6月17日宣布：2026世界人工智能大会暨人工智能全球治理高级别会议（WAIC 2026）将于7月17-20日在上海举办，主题"智能伙伴，共创未来"，由外交部、科技部、工信部等10个部门与上海市政府共同主办。超300款AI产品将全球首发，覆盖大模型、智能体、机器人、AI治理等方向。
+    </div>
+    <div class="hr-section">
+      <span class="hr-tag">培训</span><span class="hr-tag">HR数字化</span><span class="hr-tag">组织发展</span>
+      <div class="hr-title">HR视角：WAIC是HR的"年度AI认知升级场"——但需要带着问题去</div>
+      <div class="hr-content">WAIC 2026的"全球治理高级别会议"板块对HR尤其重要——欧盟AI法案8月2日全面生效在即，中国AI治理标准正在成型。HR不能只去看产品，更要去看治理规则：AI在招聘、绩效评估中的合规边界在哪？跨国企业的AI用工合规如何落地？这些答案直接影响你的制度设计。</div>
+    </div>
+    <div class="action-section">
+      <span class="action-tag">💡 行动建议</span>
+      <div class="action-content">本周安排2-3名HR同事报名WAIC 2026（7月17-20日），明确分工：一人盯"AI治理"板块（合规规则），一人盯"AI Agent企业应用"板块（HR自动化工具），一人盯"AI+人才"板块（招聘/培训新技术）。会后组织内部分享会，将三个板块的收获转化为Q3的HR数字化行动计划。</div>
+    </div>
+  </div>
+
+  <!-- News 6 -->
+  <div class="news-card">
+    <div class="card-header">
+      <span class="card-num">06</span>
+      <span class="card-date">6月22日</span>
+    </div>
+    <h2>微信推出AI产品"小微"：巨头AI入口竞争进入生态级</h2>
+    <a class="source-link" href="https://www.aitntnews.com/ainews/zh-CN" target="_blank">来源：AITNT全球AI新闻</a>
+    <div class="summary">
+      微信正式推出AI产品"小微"，整合公众号、视频号等微信生态内容，支持对话交流、生成简易小程序工具、分析聊天内容。作为微信生态的AI操作入口，"小微"标志着中国互联网巨头从"AI功能嵌入"升级为"AI生态入口"——微信13亿月活用户将直接触达AI能力。
+    </div>
+    <div class="hr-section">
+      <span class="hr-tag">员工体验</span><span class="hr-tag">HR数字化</span><span class="hr-tag">培训</span>
+      <div class="hr-title">HR视角：AI从"专业工具"变成"日常入口"——员工AI素养普及的拐点来了</div>
+      <div class="hr-content">当微信13亿用户都能随手用AI对话、生成工具，意味着AI从"需要学习"的专业工具变成了"随手可用"的日常入口。这对HR的影响是双重的：正面——员工AI素养普及速度将大幅加快，培训成本降低；反面——员工可能用"小微"直接处理工作（写邮件、做PPT、分析数据），HR需要思考：这算"AI赋能"还是"AI灰色地带"？公司数据安全边界在哪？</div>
+    </div>
+    <div class="action-section">
+      <span class="action-tag">💡 行动建议</span>
+      <div class="action-content">本周更新公司AI使用规范，明确员工使用微信"小微"等通用AI产品的合规边界：哪些场景鼓励用（如写邮件提效），哪些场景禁止用（如处理客户隐私数据、薪酬敏感信息）。同时借势：在内部培训中引入"小微"作为AI入门工具——让非技术员工先从微信AI入口体验AI能力，再逐步过渡到专业AI工具。</div>
+    </div>
+  </div>
+
+  <!-- News 7 -->
+  <div class="news-card">
+    <div class="card-header">
+      <span class="card-num">07</span>
+      <span class="card-date">6月22日</span>
+    </div>
+    <h2>Claude Sonnet-5下周发布+Fable 5复活迹象：AI迭代提速与治理博弈交织</h2>
+    <a class="source-link" href="https://www.aitntnews.com/ainews/zh-CN" target="_blank">来源：AITNT全球AI新闻</a>
+    <div class="summary">
+      Anthropic被曝已内部完成Claude Sonnet-5（代号Fennec）训练，支持100万token上下文，最快下周发布。同时，下线一周的Fable 5重新出现在Claude安卓版模型选择器中。Anthropic联创Jack Clark称"行业发展只有油门没有刹车"，正推动全球协作造安全刹车。AI模型迭代速度（40天一版）与安全治理（政府封禁）之间的博弈持续加剧。
+    </div>
+    <div class="hr-section">
+      <span class="hr-tag">合规</span><span class="hr-tag">培训</span><span class="hr-tag">HR数字化</span>
+      <div class="hr-title">HR视角：AI模型40天迭代一次——你的AI合规制度能跟上吗？</div>
+      <div class="hr-content">Fable 5上线72小时被封、Sonnet-5最快下周就发——这种40天一个版本的迭代速度，意味着HR依赖的AI工具（简历筛选、绩效分析、培训推荐）底层模型每月都可能变化。你的AI使用规范、数据安全评估、合规审查流程——是半年更新一次，还是能跟上40天的节奏？这是HR必须回答的问题。</div>
+    </div>
+    <div class="action-section">
+      <span class="action-tag">💡 行动建议</span>
+      <div class="action-content">本周建立"AI工具版本追踪机制"：为组织使用的每个AI HR工具建立版本日志（当前版本号→更新日期→功能变化→合规风险评估）。每40天做一次合规快检：新版本是否引入了需要重新评估的AI能力（如自主决策、数据处理范围扩大）？将AI合规审查从"年度体检"升级为"季度快检"。</div>
+    </div>
+  </div>
+
+  <!-- HR Perspective Summary -->
+  <div style="background:#fff; border-radius:12px; padding:24px; margin-bottom:14px; box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+    <h3 style="font-size:16px; color:#1a1a2e; margin-bottom:12px;">📊 本周HR视角总结</h3>
+    <div style="font-size:14px; color:#555; line-height:1.8;">
+      <p><strong>一周核心命题：</strong>AI人才争夺进入"诺贝尔级"，HR必须从"招得到人"转向"留得住人+育得出人"。</p>
+      <p style="margin-top:8px;">三个趋势叠加：</p>
+      <p>①<strong>人才竞争升级</strong>——Jumper跳槽Anthropic说明价值观/使命感正在超越薪酬成为雇主品牌核心；燧原IPO意味着芯片赛道将开启新一轮人才争夺。</p>
+      <p>②<strong>内部育人窗口打开</strong>——AI人才供需0.97倒挂，但"大模型运维"等入门岗出现，90天转岗路径明确，这是HR最大的杠杆点。</p>
+      <p>③<strong>合规节奏必须提速</strong>——AI模型40天迭代一次，WAIC治理会议+欧盟AI法案8月生效，HR合规审查要从"年度体检"变"季度快检"。</p>
+    </div>
+  </div>
+
+  <!-- Tip -->
+  <div class="tip-box">
+    <div class="tip-tag">💡 本周HR小贴士</div>
+    <div class="tip-content">本周挑一个你最头疼的招聘流程环节（比如JD撰写、简历初筛、面试排期），用AI工具试跑一遍，记录耗时对比——这个5分钟的实验，可能就是你Q3 AI赋能HR的起点。</div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p>⚠️ 免责声明：以上信息来源于公开渠道，仅供学习参考，不构成任何商业决策建议。</p>
+    <p style="margin-top:8px;">AI+HR周报 · 每周一推送 · 由Y.BOT智能生成</p>
+  </div>
+
+</div>
+</body>
+</html>
