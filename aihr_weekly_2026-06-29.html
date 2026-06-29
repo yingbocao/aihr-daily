@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📰 AI+HR周报 | 2026-06-29（第27周）</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #f5f6f8;
+            color: #333;
+            line-height: 1.8;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 20px 16px; }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            padding: 32px 24px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        .header-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .header-date {
+            font-size: 14px;
+            color: #aab;
+            margin-bottom: 16px;
+        }
+
+        /* Stats Cards */
+        .stats-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            flex: 1;
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px 14px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .stat-number { font-size: 28px; font-weight: 700; color: #e74c3c; }
+        .stat-label { font-size: 12px; color: #888; margin-top: 4px; }
+
+        /* Signal Banner */
+        .signal-banner {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: #fff;
+            padding: 20px 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .signal-label {
+            font-size: 12px;
+            font-weight: 600;
+            opacity: 0.85;
+            margin-bottom: 6px;
+            letter-spacing: 1px;
+        }
+        .signal-text { font-size: 16px; font-weight: 600; }
+
+        /* News Card */
+        .news-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s;
+        }
+        .news-card:hover { transform: translateY(-2px); }
+        .news-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: #e74c3c;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        .news-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+        .news-title a { color: #1a1a2e; text-decoration: none; }
+        .news-title a:hover { color: #e74c3c; }
+        .news-meta {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 14px;
+        }
+        .news-summary {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        .news-section {
+            margin-bottom: 14px;
+            padding-left: 14px;
+            border-left: 3px solid;
+        }
+        .hr-view { border-color: #e74c3c; }
+        .action-tip { border-color: #27ae60; }
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+        .hr-view .section-label { color: #e74c3c; }
+        .action-tip .section-label { color: #27ae60; }
+        .section-content { font-size: 14px; color: #555; line-height: 1.7; }
+
+        /* Tip Card */
+        .tip-card {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: #fff;
+            padding: 20px 24px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        .tip-label { font-size: 12px; font-weight: 600; opacity: 0.85; margin-bottom: 6px; letter-spacing: 1px; }
+        .tip-text { font-size: 15px; line-height: 1.7; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            color: #aaa;
+            font-size: 12px;
+            padding: 20px 0;
+            line-height: 1.6;
+        }
+        .footer a { color: #888; }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .stats-row { flex-wrap: wrap; }
+            .stat-card { min-width: 45%; }
+            .header-title { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-title">📰 AI+HR周报</div>
+            <div class="header-date">2026年6月29日 · 第27周 · 6月23日—29日新闻汇总</div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">本周精选新闻</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5</div>
+                <div class="stat-label">HR模块覆盖</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3</div>
+                <div class="stat-label">中国动态</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div class="stat-label">国际动态</div>
+            </div>
+        </div>
+
+        <!-- Signal Banner -->
+        <div class="signal-banner">
+            <div class="signal-label">⚡ 本周信号</div>
+            <div class="signal-text">AI从"模型竞赛"进入"全栈竞争"——OpenAI造芯片、北森做AI应用公司、微软重塑Agent平台，HR的核心挑战不再是"用什么AI"，而是"组织能否跟上AI迭代的速度"</div>
+        </div>
+
+        <!-- News 1 -->
+        <div class="news-card">
+            <div style="display:flex;align-items:center;margin-bottom:12px;">
+                <span class="news-number">1</span>
+                <div class="news-title"><a href="https://www.eet-china.com/news/202606258325.html" target="_blank">OpenAI发布首款自研AI推理芯片Jalapeño：9个月流片，推理成本直降50%</a></div>
+            </div>
+            <div class="news-meta">6月25日 · 国际 · OpenAI & Broadcom</div>
+            <div class="news-summary">
+                OpenAI与博通联合发布首款自研AI推理芯片Jalapeño，采用台积电3nm工艺与脉动阵列架构，9个月完成从设计到流片。推理成本降低50%，计划年底部署于千兆瓦级数据中心。这意味着OpenAI正式从纯模型公司转型为全栈AI基础设施提供商，AI算力成本将迎来结构性下降。
+            </div>
+            <div class="news-section hr-view">
+                <div class="section-label">🔍 HR视角分析</div>
+                <div class="section-content">
+                    影响<strong>HR数字化</strong>与<strong>薪酬</strong>模块——推理成本下降意味着AI驱动的HR系统（智能招聘、AI面试官、员工画像）的使用门槛大幅降低，中小企业也能负担高质量AI能力。同时，AI芯片竞赛加速意味着企业IT预算中"AI基础设施"支出占比持续上升，HR需要与IT/财务协同规划AI采购与部署策略。
+                </div>
+            </div>
+            <div class="news-section action-tip">
+                <div class="section-label">💡 行动建议</div>
+                <div class="section-content">
+                    本周与IT部门确认：公司当前HR系统的AI推理调用成本是多少？如果成本下降50%，哪些HR场景（JD生成、简历筛选、员工问答机器人）可以优先升级为AI驱动？同时评估明年IT预算中AI基础设施的占比是否需要调整。
+                </div>
+            </div>
+        </div>
+
+        <!-- News 2 -->
+        <div class="news-card">
+            <div style="display:flex;align-items:center;margin-bottom:12px;">
+                <span class="news-number">2</span>
+                <div class="news-title"><a href="https://www.beisen.com/news/671.html" target="_blank">北森全面转型AI应用公司：发布Mavens一站式AI HR专家平台，AI业务新签暴涨10倍</a></div>
+            </div>
+            <div class="news-meta">6月24日 · 中国 · 北森控股</div>
+            <div class="news-summary">
+                北森宣布从传统"HR软件"厂商全面转型为HR领域"AI应用"公司，推出国内首个一站式AI HR专家平台Mavens。平台包含AI助手类数字HR（具备Agent任务交付能力）和AI专家类数字HR（深度诊断与决策建议），依托SenGPT与人才科学体系。2026财年营收11.05亿元，同比增16.9%，扭亏为盈，AI业务新签合同额暴涨10倍。
+            </div>
+            <div class="news-section hr-view">
+                <div class="section-label">🔍 HR视角分析</div>
+                <div class="section-content">
+                    直接影响<strong>HR数字化全模块</strong>——北森Mavens标志着HR SaaS从"软件+AI功能"升级为"AI原生应用"。数字HR助手可承接简历筛选、面试安排、薪酬核算等高频事务，数字HR专家可做人才诊断、绩效洞察。这意味着HR团队的组织形态将从"人做流程"变为"人+数字HR协作做流程"，HR岗位结构与技能要求将加速分化。
+                </div>
+            </div>
+            <div class="news-section action-tip">
+                <div class="section-label">💡 行动建议</div>
+                <div class="section-content">
+                    本周评估：如果使用北森Mavens，你的HR团队中哪些岗位的工作量可以被数字HR助手替代30-50%？将替代释放的时间重新分配到哪些高价值任务（人才战略规划、组织诊断、员工体验设计）上？建议先从招聘流程的简历初筛+面试安排场景试点。
+                </div>
+            </div>
+        </div>
+
+        <!-- News 3 -->
+        <div class="news-card">
+            <div style="display:flex;align-items:center;margin-bottom:12px;">
+                <span class="news-number">3</span>
+                <div class="news-title"><a href="https://cybernews.com/news/anthropic-alibaba-industrial-scale-ai-extraction-mythos-rival/" target="_blank">Anthropic指控阿里巴巴史上最大规模Claude蒸馏攻击：2.5万虚假账号</a></div>
+            </div>
+            <div class="news-meta">6月25日 · 国际 · Anthropic & Alibaba</div>
+            <div class="news-summary">
+                Anthropic向美国参议院举报阿里巴巴通过2.5万虚假账号对Claude实施史上最大规模蒸馏攻击（distillation attack），试图系统性提取Claude的AI能力，可能加速中国AI模型追赶Anthropic的Mythos系列。此事揭示了AI知识产权保护的全新战场——模型能力不再只是代码和权重，而是可被系统性"蒸馏窃取"的商业资产。
+            </div>
+            <div class="news-section hr-view">
+                <div class="section-label">🔍 HR视角分析</div>
+                <div class="section-content">
+                    影响<strong>合规</strong>与<strong>员工关系</strong>模块——蒸馏攻击事件意味着AI知识产权保护进入新维度，企业使用AI工具时需要评估数据安全风险。如果公司使用Claude等海外AI模型处理HR数据（简历、薪酬、员工信息），需警惕数据是否可能通过模型交互被"蒸馏提取"。同时，AI公司间的知识产权争议将影响AI服务的稳定性和合规性，HR选型需考虑替代方案。
+                </div>
+            </div>
+            <div class="news-section action-tip">
+                <div class="section-label">💡 行动建议</div>
+                <div class="section-content">
+                    本周盘点：公司HR系统中使用的AI工具（ChatGPT、Claude、国内大模型等）涉及哪些敏感数据场景？建议制定"AI工具数据分级使用指南"——员工个人数据、薪酬数据仅使用部署在内网/私有化的大模型处理，公开数据场景可使用云端API。同时关注国产大模型（DeepSeek等）的HR适配方案作为备选。
+                </div>
+            </div>
+        </div>
+
+        <!-- News 4 -->
+        <div class="news-card">
+            <div style="display:flex;align-items:center;margin-bottom:12px;">
+                <span class="news-number">4</span>
+                <div class="news-title"><a href="https://redmondmag.com/blogs/redmond-dispatch/2026/06/microsoft-unveils-redesigned-copilot-studio.aspx" target="_blank">微软重塑Copilot Studio：企业级多步骤AI Agent工作流平台</a></div>
+            </div>
+            <div class="news-meta">6月9日 · 国际 · Microsoft</div>
+            <div class="news-summary">
+                微软在Build 2026后发布全新改版的Copilot Studio，支持构建复杂多步骤AI Agent工作流，新增编排引擎、MCP集成和企业级治理能力。这意味着非技术员工也能用自然语言定义AI Agent完成跨系统任务（如自动审批→通知→记录），企业AI Agent从"辅助对话"正式迈向"自主执行复杂业务流程"。
+            </div>
+            <div class="news-section hr-view">
+                <div class="section-label">🔍 HR视角分析</div>
+                <div class="section-content">
+                    影响<strong>HR数字化</strong>与<strong>员工体验</strong>模块——Copilot Studio的Agent工作流能力意味着HR可以构建"AI员工入职Agent"（自动发邮件→创建账号→安排培训→通知导师）、"离职流程Agent"、"薪酬调整审批Agent"等。HR流程自动化从RPA式"规则执行"升级为AI Agent式"智能决策+多步骤执行"，大幅减少HR事务性工作量。
+                </div>
+            </div>
+            <div class="news-section action-tip">
+                <div class="section-label">💡 行动建议</div>
+                <div class="section-content">
+                    本周选一个高频HR流程（如员工入职或请假审批），用Copilot Studio或国内类似工具（钉钉AI、飞书多维表格AI）画一个Agent工作流草图：哪些步骤由AI自动执行？哪些需要人工确认？预估可节省多少工时。先用最简单的流程做概念验证，再逐步扩展到复杂场景。
+                </div>
+            </div>
+        </div>
+
+        <!-- News 5 -->
+        <div class="news-card">
+            <div style="display:flex;align-items:center;margin-bottom:12px;">
+                <span class="news-number">5</span>
+                <div class="news-title"><a href="https://sorabin.com/eu-ai-act-high-risk-deadline-extended-2026-guidelines/" target="_blank">欧盟AI法案高风险合规截止日期延期1-2年：HR相关AI系统受直接影响</a></div>
+            </div>
+            <div class="news-meta">6月9日/18日 · 国际 · EU Commission</div>
+            <div class="news-summary">
+                欧盟委员会将高风险AI系统的合规期限推迟1-2年，涵盖招聘AI、员工评估AI、薪酬决策AI等HR相关系统。原定8月2日执行的高风险AI合规要求（透明度、人类监督、数据治理）获得更多缓冲时间，但78%企业仍未就绪。延期不意味着放松——而是给了企业更多准备窗口，合规要求本身不变。
+            </div>
+            <div class="news-section hr-view">
+                <div class="section-label">🔍 HR视角分析</div>
+                <div class="section-content">
+                    直接影响<strong>合规</strong>、<strong>招聘</strong>和<strong>绩效管理</strong>模块——HR使用的AI筛选简历系统、AI绩效评估工具、AI薪酬决策系统均属于EU AI Act高风险类别。延期给了额外缓冲，但合规要求不会降低：透明度（告知候选人AI参与筛选）、人类监督（HR可推翻AI决策）、数据治理（训练数据无偏见）。有海外业务的中国企业必须提前布局合规。
+                </div>
+            </div>
+            <div class="news-section action-tip">
+                <div class="section-label">💡 行动建议</div>
+                <div class="section-content">
+                    本周启动"AI合规自查清单"：列出公司所有HR场景中使用的AI工具/系统，逐一标注是否涉及高风险类别（招聘筛选、绩效评估、薪酬决策）。对涉及海外员工的高风险场景，制定合规整改计划：①添加AI决策透明声明 ②设置人类复核机制 ③审查训练数据偏见风险。利用延期窗口期提前完成合规部署。
+                </div>
+            </div>
+        </div>
+
+        <!-- News 6 -->
+        <div class="news-card">
+            <div style="display:flex;align-items:center;margin-bottom:12px;">
+                <span class="news-number">6</span>
+                <div class="news-title"><a href="https://news.yunnan.cn/system/2026/06/18/034050103.shtml" target="_blank">江苏举办"AI+人力资源服务"全球创新大赛：破解人才供需匹配难题</a></div>
+            </div>
+            <div class="news-meta">6月18日 · 中国 · 江苏省人社厅</div>
+            <div class="news-summary">
+                江苏省举办"AI+人力资源服务"全球创新创意大赛，6月至9月进行，由中国人才交流协会与江苏省人社厅主办。大赛聚焦AI在人力资源供需匹配、技能培训、智能招聘等场景的创新应用，旨在破解结构性人才供需错配难题，打造数智创新策源地。这是全国首个省级AI+HR专项大赛。
+            </div>
+            <div class="news-section hr-view">
+                <div class="section-label">🔍 HR视角分析</div>
+                <div class="section-content">
+                    影响<strong>招聘</strong>、<strong>培训</strong>和<strong>HR数字化</strong>模块——省级政府主办AI+HR大赛，标志着AI在HR领域的应用从"企业自发探索"进入"政策体系化推动"阶段。大赛成果可能催生新的HR科技产品和服务模式（如AI驱动的技能匹配平台、智能培训系统），HR从业者需关注大赛进展和获奖项目，这可能成为未来的行业标准或采购方向。
+                </div>
+            </div>
+            <div class="news-section action-tip">
+                <div class="section-label">💡 行动建议</div>
+                <div class="section-content">
+                    关注大赛官网和入围项目列表，将获奖项目的创新思路与公司当前HR痛点对照——哪些AI+HR创新方案可以直接借鉴？如果公司有AI+HR创新产品或实践案例，考虑参赛或合作，既可获得政策支持，也能在行业中获得品牌曝光。
+                </div>
+            </div>
+        </div>
+
+        <!-- News 7 -->
+        <div class="news-card">
+            <div style="display:flex;align-items:center;margin-bottom:12px;">
+                <span class="news-number">7</span>
+                <div class="news-title"><a href="https://freeai.help/blog/june-2026-large-model-update-roundup-comprehensive-evolution-from-gpt-5-5-to-claude-opus-4-7-en" target="_blank">6月大模型密集更新：GPT-5.5、Claude Opus 4.7、Gemini 3.5 Flash齐发</a></div>
+            </div>
+            <div class="news-meta">6月全月 · 国际 · OpenAI / Anthropic / Google</div>
+            <div class="news-summary">
+                2026年6月成为大模型"超级更新月"：OpenAI发布GPT-5.5（推理能力显著增强）、Anthropic推出Claude Opus 4.7（长上下文与多模态突破）、Google发布Gemini 3.5 Flash（极致推理速度+低成本）。三大巨头在不同维度突破——GPT-5.5侧重复杂推理，Claude Opus 4.7侧重深度理解与安全，Gemini 3.5 Flash侧重速度与性价比。模型能力差距在缩小，选择越来越取决于场景适配。
+            </div>
+            <div class="news-section hr-view">
+                <div class="section-label">🔍 HR视角分析</div>
+                <div class="section-content">
+                    影响<strong>HR数字化全模块</strong>——大模型能力全面升级意味着HR可用的AI工具"基底能力"质变：GPT-5.5的推理增强让JD生成、面试问题设计更精准；Claude Opus 4.7的长上下文让批量简历分析、员工绩效报告解读更高效；Gemini 3.5 Flash的速度优势让实时员工问答、HR政策即问即答体验更好。HR选型不再纠结"哪个模型最强"，而是要匹配"哪个模型最适合我的场景"。
+                </div>
+            </div>
+            <div class="news-section action-tip">
+                <div class="section-label">💡 行动建议</div>
+                <div class="section-content">
+                    本周做一个"HR场景×大模型适配矩阵"：列出5个高频HR场景（JD撰写、简历筛选、面试辅助、绩效分析、员工问答），分别用GPT-5.5/Claude/Gemini各跑一次，对比输出质量、速度和成本。根据实测结果确定每个场景的最佳模型选择，避免"一刀切"用一个模型覆盖所有HR场景。
+                </div>
+            </div>
+        </div>
+
+        <!-- Tip Card -->
+        <div class="tip-card">
+            <div class="tip-label">📌 本周HR小贴士</div>
+            <div class="tip-text">
+                <strong>别只关注"AI能做什么"，更要关注"组织能否消化AI的产出"</strong><br>
+                本周最值得关注的一个趋势：AI工具的能力已经远超多数组织的消化速度。OpenAI9个月造出芯片、北森10倍增长AI业务——但你的HR团队能在一周内学会用好一个新AI工具吗？建议本周花30分钟做一次"AI消化力自测"：过去3个月引入的AI工具，有多少真正改变了工作方式？答案可能比"该买什么新工具"更重要。
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            📰 AI+HR周报 · 每周一更新 · 由AI新闻总编辑自动生成<br>
+            信息来源：公开渠道搜索整理，仅供参考，不构成决策建议<br>
+            <a href="https://yingbocao.github.io/aihr-daily/">往期周报合集</a>
+        </div>
+    </div>
+</body>
+</html>
