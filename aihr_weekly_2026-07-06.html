@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📰 AI+HR周报 | 2026-07-06（第28周）</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+            background: #f5f6f8;
+            color: #333;
+            line-height: 1.8;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 20px 16px; }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            color: #fff;
+            padding: 32px 24px;
+            border-radius: 16px;
+            margin-bottom: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+        }
+        .header-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .header-date {
+            font-size: 14px;
+            color: #aab;
+            margin-bottom: 16px;
+        }
+
+        /* Stats Cards */
+        .stats-row {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+        .stat-card {
+            flex: 1;
+            background: #fff;
+            border-radius: 12px;
+            padding: 16px 14px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+        }
+        .stat-number { font-size: 28px; font-weight: 700; color: #e74c3c; }
+        .stat-label { font-size: 12px; color: #888; margin-top: 4px; }
+
+        /* Signal Banner */
+        .signal-banner {
+            background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+            color: #fff;
+            padding: 20px 24px;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            font-size: 15px;
+            line-height: 1.7;
+        }
+        .signal-label {
+            font-size: 12px;
+            font-weight: 600;
+            opacity: 0.85;
+            margin-bottom: 6px;
+            letter-spacing: 1px;
+        }
+        .signal-text { font-size: 16px; font-weight: 600; }
+
+        /* News Card */
+        .news-card {
+            background: #fff;
+            border-radius: 14px;
+            padding: 24px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s;
+        }
+        .news-card:hover { transform: translateY(-2px); }
+        .news-number {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            background: #e74c3c;
+            color: #fff;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-right: 10px;
+        }
+        .news-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-bottom: 6px;
+        }
+        .news-title a { color: #1a1a2e; text-decoration: none; }
+        .news-title a:hover { color: #e74c3c; }
+        .news-meta {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 14px;
+        }
+        .news-summary {
+            font-size: 15px;
+            color: #444;
+            margin-bottom: 16px;
+            line-height: 1.7;
+        }
+        .news-section {
+            margin-bottom: 14px;
+            padding-left: 14px;
+            border-left: 3px solid;
+        }
+        .hr-view { border-color: #e74c3c; }
+        .action-tip { border-color: #27ae60; }
+        .section-label {
+            font-size: 12px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+        .hr-view .section-label { color: #e74c3c; }
+        .action-tip .section-label { color: #27ae60; }
+        .section-content { font-size: 14px; color: #555; line-height: 1.7; }
+
+        /* Tip Card */
+        .tip-card {
+            background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+            color: #fff;
+            padding: 20px 24px;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+        .tip-label { font-size: 12px; font-weight: 600; opacity: 0.85; margin-bottom: 6px; letter-spacing: 1px; }
+        .tip-text { font-size: 15px; line-height: 1.7; }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            color: #aaa;
+            font-size: 12px;
+            padding: 20px 0;
+            line-height: 1.6;
+        }
+        .footer a { color: #888; }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .stats-row { flex-wrap: wrap; }
+            .stat-card { min-width: 45%; }
+            .header-title { font-size: 18px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-title">📰 AI+HR周报</div>
+            <div class="header-date">2026年7月6日 · 第28周 · 6月30日—7月6日新闻汇总</div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-row">
+            <div class="stat-card">
+                <div class="stat-number">7</div>
+                <div class="stat-label">本周精选新闻</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5</div>
+                <div class="stat-label">HR模块覆盖</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div class="stat-label">中国动态</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">3</div>
+                <div class="stat-label">国际动态</div>
+            </div>
+        </div>
+
+        <!-- Signal Banner -->
+        <div class="signal-banner">
+            <div class="signal-label">⚡ 本周信号</div>
+            <div class="signal-text">AI从"技术问题"升级为"组织基础设施"——微软砸25亿6000人成立Frontier Company驻场、Anthropic Sonnet 5把Agent拉到$2/百万token、阿里禁用Claude重塑企业AI架构，HR的真正挑战不是"要不要用AI"，而是"如何让组织架构与AI Agent共生"</div>
+        </div>
+
+        <!-- News 1 -->
+        <div class="news-card">
+            <div style="display:flex;align-items:center;margin-bottom:12px;">
+                <span class="news-number">1</span>
+                <div class="news-title"><a href="https://blogs.microsoft.com/blog/2026/07/02/microsoft-frontier-company-ai-engineering-that-amplifies-and-protects-your-intelligence/" target="_blank">微软25亿美元成立Microsoft Frontier Company：6000人"驻场式"AI部署组织</a></div>
+            </div>
+            <div class="news-meta">7月2日 · 国际 · Microsoft</div>
+            <div class="news-summary">
+                微软宣布投入25亿美元成立全新运营实体Microsoft Frontier Company，整合约6000名工程师、技术顾问和销售团队，直接派驻到客户企业内部提供端到端AI部署服务。这是微软史上最大的"前线工程师（FDE）"组织，目标客户已包括LSEG（伦敦证交所）、Land O'Lakes、联合利华、诺和诺德等。同步宣布与Accenture、Capgemini、EY、KPMG、PwC五大咨询公司扩展FDE合作。
+            </div>
+            <div class="news-section hr-view">
+                <div class="section-label">🔍 HR视角分析</div>
+                <div class="section-content">
+                    影响<strong>HR数字化</strong>、<strong>组织设计</strong>与<strong>招聘</strong>模块——"驻场AI工程师"模式标志着企业AI落地从"买工具"升级为"养团队"。HR需重新思考：当AI Agent越来越能干，组织还需要这么多一线执行人员吗？以及如何设计"人+AI"的混合岗位（AI Trainer、AI Workflow Designer、AI Auditor）？同时，6000个AI部署岗位本身就是巨大的招聘与培训市场。
+                </div>
+            </div>
+            <div class="news-section action-tip">
+                <div class="section-label">💡 行动建议</div>
+                <div class="section-content">
+                    本周思考两个问题：①公司如果引入AI Agent，目前HR团队中哪些岗位需要增加"AI协作"维度（如"招聘官+AI Agent Trainer"）？②绘制"AI部署成熟度地图"——哪些部门适合先做"驻场式深度落地"，哪些适合"工具自服务"？如果你们公司也在做AI转型，可参考微软的"派驻+咨询合作"模式。
+                </div>
+            </div>
+        </div>
+
+        <!-- News 2 -->
+        <div class="news-card">
+            <div style="display:flex;align-items:center;margin-bottom:12px;">
+                <span class="news-number">2</span>
+                <div class="news-title"><a href="https://www.anthropic.com/news/claude-sonnet-5" target="_blank">Anthropic发布Claude Sonnet 5：最强Agent模型，$2/百万token史低定价</a></div>
+            </div>
+            <div class="news-meta">6月30日 · 国际 · Anthropic</div>
+            <div class="news-summary">
+                Anthropic发布Claude Sonnet 5，定位"最强智能体AI模型"，能制定计划、使用浏览器和终端工具并自主运行。上下文窗口达100万token，SWE-bench Pro得分63.2%、OSWorld得分81.2%。关键定价：限时优惠$2/百万输入token、$10/百万输出token（8月31日前），后续恢复$3/$15。同日发布AI科研工具Claude Science，目标科学家群体。
+            </div>
+            <div class="news-section hr-view">
+                <div class="section-label">🔍 HR视角分析</div>
+                <div class="section-content">
+                    影响<strong>HR数字化全模块</strong>——Sonnet 5的Agent能力+低价策略意味着HR可以用极低成本构建"AI员工"：自动回复员工政策咨询（Agent+知识库）、自动处理简历初筛（Agent+简历解析）、自动跟进面试反馈（Agent+多轮对话）。100万token上下文让"AI读完整年员工沟通记录"、"AI分析全公司绩效报告"成为可能。AI HR的边际成本正在快速趋近于零。
+                </div>
+            </div>
+            <div class="news-section action-tip">
+                <div class="section-label">💡 行动建议</div>
+                <div class="section-content">
+                    本周做一件事：列出一个"AI Agent可承接的HR事务清单"（如"员工福利政策答疑Agent"、"入离职流程Agent"、"薪酬对比Agent"），每个事务预估当前HR花费的工时。然后评估用Sonnet 5+Coze/Dify/FastGPT等Agent平台自建的成本（限时$2/百万token）。选1个最痛的事务，本月内做出Agent MVP。
+                </div>
+            </div>
+        </div>
+
+        <!-- News 3 -->
+        <div class="news-card">
+            <div style="display:flex;align-items:center;margin-bottom:12px;">
+                <span class="news-number">3</span>
+                <div class="news-title"><a href="https://www.ithome.com/0/972/210.htm" target="_blank">阿里全面禁用Claude全系模型：7月10日生效，147家国内企业跟进</a></div>
+            </div>
+            <div class="news-meta">7月3日 · 中国 · 阿里巴巴</div>
+            <div class="news-summary">
+                阿里内部通知：7月10日起全面禁用Anthropic旗下Claude全系模型（含Sonnet、Opus、Fable）以及Claude Code工具，要求全体员工卸载。直接导火索是Anthropic指控阿里用2.5万虚假账号"蒸馏"Claude能力（2880万次交互）。同时技术社区逆向发现Claude Code客户端内置隐写标记机制，疑似用于识别用户身份与时区。据报道已有147家国内科技企业跟进禁用。
+            </div>
+            <div class="news-section hr-view">
+                <div class="section-label">🔍 HR视角分析</div>
+                <div class="section-content">
+                    影响<strong>合规</strong>、<strong>员工关系</strong>与<strong>HR数字化</strong>模块——"147家企业跟进禁用"标志着企业AI工具选择进入"地缘合规"维度。HR选型AI工具时必须考虑：①数据是否出境（涉及员工隐私合规）②供应商所在司法管辖区（是否受外国政府管辖）③替代方案是否就绪。同时，禁用潮也带来"工具断层"风险，员工可能因工作流突然断裂产生不满，HR需要做好过渡沟通与培训支持。
+                </div>
+            </div>
+            <div class="news-section action-tip">
+                <div class="section-label">💡 行动建议</div>
+                <div class="section-content">
+                    本周启动"HR AI工具合规审计"：①列出公司HR/员工使用的所有AI工具，按"数据出境风险"分级 ②对高风险工具（海外大模型API、跨国SaaS），准备国产替代方案（DeepSeek、Qwen、Kimi等）③如发生工具禁用，制定"72小时员工沟通模板"——讲清禁用原因、替代方案、学习资源，降低员工焦虑与抵触。
+                </div>
+            </div>
+        </div>
+
+        <!-- News 4 -->
+        <div class="news-card">
+            <div style="display:flex;align-items:center;margin-bottom:12px;">
+                <span class="news-number">4</span>
+                <div class="news-title"><a href="https://www.beisen.com/news/670.html" target="_blank">北森再放大招：年内推出至少15个AI HR专家，AI业务新签暴涨10倍</a></div>
+            </div>
+            <div class="news-meta">6月24日-7月 · 中国 · 北森控股</div>
+            <div class="news-summary">
+                北森（09669.HK）2026财年营收11.05亿元、扭亏为盈，AI业务新签合同额同比暴涨10倍。CEO纪伟国宣布：北森将从HR软件公司全面转型为"AI应用"公司，年内陆续推出至少15个AI HR专家。依托自研SenGPT大模型和SenClaw Agent体系，Mavens平台已上线"助手类数字HR"（可承接流程事务）和"专家类数字HR"（可做诊断与建议）。这是国内HR SaaS首次系统性提出"AI HR专家团"概念。
+            </div>
+            <div class="news-section hr-view">
+                <div class="section-label">🔍 HR视角分析</div>
+                <div class="section-content">
+                    影响<strong>HR数字化全模块</strong>与<strong>组织发展</strong>——"15个AI HR专家"模式意味着HR团队结构可能从"招聘+培训+绩效+薪酬+员工关系"5人小组，演变为"5个真人HR + N个AI HR专家"的新型混合团队。这要求HR从"操作者"转型为"AI指挥官"——需要懂业务、懂AI、懂人的复合型HRBP。建议关注Mavens后续开放的Agent能力，能否成为行业参考标准。
+                </div>
+            </div>
+            <div class="news-section action-tip">
+                <div class="section-label">💡 行动建议</div>
+                <div class="section-content">
+                    本周做"AI HR团队规划"沙盘：①把你们公司HR工作拆分为"事务性（流程/答疑/数据）"和"判断性（诊断/决策/战略）"两类 ②估算事务性工作中多少可由AI Agent承担（业内一般认为30-50%）③画出未来12个月"AI+HR"团队结构演进图——哪些岗位会新增（如AI Trainer）、哪些会升级（如HRBP→Strategic HRBP）。
+                </div>
+            </div>
+        </div>
+
+        <!-- News 5 -->
+        <div class="news-card">
+            <div style="display:flex;align-items:center;margin-bottom:12px;">
+                <span class="news-number">5</span>
+                <div class="news-title"><a href="https://www.alphapilot.tech/zh-CN/discover/spacex-to-acquire-ai-coding-startup-cursor-in-landmark-60-billion-all-stock-merger" target="_blank">SpaceX 600亿美元收购Cursor（Anysphere）：AI编程工具赛道进入"巨头整合期"</a></div>
+            </div>
+            <div class="news-meta">6月16日生效 · 国际 · SpaceX / xAI</div>
+            <div class="news-summary">
+                SpaceX宣布以600亿美元全股票交易收购AI编程工具Cursor母公司Anysphere，预计Q3 2026完成。同步，xAI发布Grok 4.5（1.5万亿参数V9基础模型），并宣布Grok 4.5将整合Cursor的编程数据，Cursor工程师团队将参与模型研发。这意味着AI编程赛道正式进入"巨头整合期"——头部公司从模型到工具的垂直整合将挤压独立AI编程公司的生存空间。
+            </div>
+            <div class="news-section hr-view">
+                <div class="section-label">🔍 HR视角分析</div>
+                <div class="section-content">
+                    影响<strong>招聘</strong>、<strong>薪酬</strong>与<strong>组织发展</strong>模块——AI编程工具赛道的整合释放三个关键信号：①初级程序员岗位需求将进一步下降（Cursor等已能自动写大量代码）②能"指挥AI写代码"的工程师（即"AI-native Developer"）将成为最稀缺资源，薪酬溢价可能达30-50%③企业内部需要重新设计研发岗位的JD和KPI——从"代码产出量"转向"AI协作效率+架构设计能力"。
+                </div>
+            </div>
+            <div class="news-section action-tip">
+                <div class="section-label">💡 行动建议</div>
+                <div class="section-content">
+                    本周做"研发岗JD重写实验"：选公司3-5个核心研发岗位的JD，用AI（Claude/GPT/DeepSeek）生成"AI原生版JD"——明确写出该岗位需要使用哪些AI工具、产出哪些AI协作成果、需要哪些AI素养（如Prompt Engineering、AI Code Review、Agent Workflow设计）。对比新旧JD的能力要求差异，思考团队能力缺口。
+                </div>
+            </div>
+        </div>
+
+        <!-- News 6 -->
+        <div class="news-card">
+            <div style="display:flex;align-items:center;margin-bottom:12px;">
+                <span class="news-number">6</span>
+                <div class="news-title"><a href="https://blog.csdn.net/agito_cheung/article/details/162587564" target="_blank">美团LongCat-2.0开源：1.6万亿参数，全程国产算力训练</a></div>
+            </div>
+            <div class="news-meta">6月30日 · 中国 · 美团</div>
+            <div class="news-summary">
+                美团发布并开源LongCat-2.0万亿参数大模型（总参数1.6万亿），这是业界首个依靠国产算力完成训练+推理全流程的万亿级大模型。同周：①Kimi确认K3将于本月发布（参数比DeepSeek V4正式版更大）②DeepSeek V4正式版定于7月中旬发布③智谱GLM 5.2 + Kimi K2.7 Code被美国Coinbase设为全员默认模型，标志中国开源模型实现海外企业级渗透。
+            </div>
+            <div class="news-section hr-view">
+                <div class="section-label">🔍 HR视角分析</div>
+                <div class="section-content">
+                    影响<strong>HR数字化</strong>与<strong>采购选型</strong>模块——国产开源模型快速崛起对HR有三层意义：①打破"国产模型不如海外"的偏见，HR可放心使用国产模型处理敏感数据（员工信息、薪酬）②国产模型"成本低+可私有化部署+可微调"特性，特别适合HR场景的"小数据+高合规"需求③Coinbase等海外企业用中国模型，预示着"中国AI模型"可能成为全球HR SaaS的新基建，HR选型视野需要国际化。
+                </div>
+            </div>
+            <div class="news-section action-tip">
+                <div class="section-label">💡 行动建议</div>
+                <div class="section-content">
+                    本周做"国产大模型HR场景实测"：选DeepSeek、Qwen、智谱GLM三家主流国产大模型，在"JD撰写"、"员工政策问答"、"简历摘要"3个HR场景分别测试输出质量、响应速度、成本。记录每个场景的最佳模型。如果涉及员工敏感数据，优先选择支持私有化部署的版本（如DeepSeek+Qwen的本地化部署方案）。
+                </div>
+            </div>
+        </div>
+
+        <!-- News 7 -->
+        <div class="news-card">
+            <div style="display:flex;align-items:center;margin-bottom:12px;">
+                <span class="news-number">7</span>
+                <div class="news-title"><a href="https://news.qq.com/rain/a/20260625A01MM200" target="_blank">Anthropic向美国国会举报：阿里"蒸馏攻击"Claude创纪录的2880万次交互</a></div>
+            </div>
+            <div class="news-meta">6月25日-7月 · 国际/中国 · Anthropic & Alibaba</div>
+            <div class="news-summary">
+                Anthropic向美国参议员和白宫官员提交正式举报信，指控阿里巴巴通过近2.5万个虚假账号对Claude实施"有史以来最大规模"的蒸馏攻击——2880万次交互，专门提取Claude的编程与智能体推理能力。阿里方面暂未正式回应。此事件升级为美中AI竞争的地缘政治议题，已触发阿里7月10日禁用Claude的内部决策，并影响147家国内企业跟进。
+            </div>
+            <div class="news-section hr-view">
+                <div class="section-label">🔍 HR视角分析</div>
+                <div class="section-content">
+                    影响<strong>合规</strong>、<strong>员工关系</strong>与<strong>组织文化</strong>模块——"蒸馏攻击"事件把AI时代的商业伦理和数据安全议题推到HR面前：①公司员工在使用AI工具时是否也无意中"贡献"了公司敏感信息？需要明确"AI工具使用边界"②海外业务企业面临的"地缘合规"风险陡增，HR需与法务、IT共建AI合规框架③"AI商业间谍"事件提醒HR：员工AI素养教育中必须加入"AI数据伦理"模块。
+                </div>
+            </div>
+            <div class="news-section action-tip">
+                <div class="section-label">💡 行动建议</div>
+                <div class="section-content">
+                    本周发布"员工AI使用合规指引"（1页纸即可），内容包含：①禁止输入的数据类型（客户名单、未公开财报、员工薪酬明细、源代码核心模块）②推荐使用的工具（公司采购的企业版+批准的国产模型）③违规后果。让每个员工在用AI之前，先想30秒"这个数据能不能传给AI"。
+                </div>
+            </div>
+        </div>
+
+        <!-- Tip Card -->
+        <div class="tip-card">
+            <div class="tip-label">📌 本周HR小贴士</div>
+            <div class="tip-text">
+                <strong>别再问"要不要用AI"，要问"AI Agent进来后，我的岗位还剩什么"</strong><br>
+                本周最值得HR深思的信号：微软6000人驻场帮企业部署AI、Anthropic把Agent定价打到$2/百万token、北森1年砸10亿做15个AI HR专家——这意味着AI Agent进入企业不再是"会不会"的问题，而是"多快"的问题。建议本周和你的直属上级/老板做一次30分钟的"AI时代岗位规划对话"：3年后你的岗位核心价值是什么？哪些工作会被Agent替代？哪些新能力需要补上？越早开始思考，越有时间准备。
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            📰 AI+HR周报 · 每周一更新 · 由AI新闻总编辑自动生成<br>
+            信息来源：公开渠道搜索整理，仅供参考，不构成决策建议<br>
+            <a href="https://yingbocao.github.io/aihr-daily/">往期周报合集</a>
+        </div>
+    </div>
+</body>
+</html>
