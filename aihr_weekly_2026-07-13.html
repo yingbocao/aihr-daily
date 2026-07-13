@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📰 AI+HR周报 | 2026-07-13（第29周）</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: #f0f2f5;
+            color: #333;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        .container { max-width: 720px; margin: 0 auto; padding: 0; }
+
+        /* Header */
+        .header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+            padding: 40px 24px 32px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+        .header .subtitle {
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 20px;
+        }
+        .header .stats {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-item .num {
+            font-size: 28px;
+            font-weight: 800;
+            color: #e94560;
+        }
+        .stat-item .label {
+            font-size: 12px;
+            color: rgba(255,255,255,0.5);
+            margin-top: 2px;
+        }
+
+        /* Signal Banner */
+        .signal {
+            background: linear-gradient(135deg, #e94560 0%, #c23152 100%);
+            color: #fff;
+            padding: 20px 24px;
+            text-align: center;
+        }
+        .signal .signal-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            opacity: 0.7;
+            margin-bottom: 6px;
+        }
+        .signal .signal-text {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        /* News Cards */
+        .news-section { padding: 24px 16px; }
+        .news-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .news-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+        }
+        .news-card .news-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .news-num {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #0f3460, #16213e);
+            color: #fff;
+            font-size: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .news-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: #1a1a2e;
+            line-height: 1.4;
+        }
+        .news-title a {
+            color: #0f3460;
+            text-decoration: none;
+        }
+        .news-title a:hover {
+            color: #e94560;
+        }
+        .news-meta {
+            font-size: 12px;
+            color: #999;
+            margin-bottom: 12px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .news-meta .tag {
+            background: #f0f2f5;
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #666;
+        }
+        .news-meta .tag.hr-tag {
+            background: #fff0f3;
+            color: #e94560;
+            font-weight: 600;
+        }
+        .news-summary {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+        .news-summary a {
+            color: #0f3460;
+            text-decoration: none;
+            border-bottom: 1px dashed #0f3460;
+        }
+        .news-summary a:hover {
+            color: #e94560;
+            border-bottom-color: #e94560;
+        }
+        .hr-analysis {
+            background: #f8f9fb;
+            border-left: 3px solid #e94560;
+            padding: 12px 16px;
+            margin-bottom: 10px;
+            border-radius: 0 8px 8px 0;
+        }
+        .hr-analysis .label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #e94560;
+            margin-bottom: 4px;
+        }
+        .hr-analysis .text {
+            font-size: 13px;
+            color: #555;
+            line-height: 1.7;
+        }
+        .action-suggestion {
+            background: #f0f7ff;
+            border-left: 3px solid #0f3460;
+            padding: 12px 16px;
+            border-radius: 0 8px 8px 0;
+        }
+        .action-suggestion .label {
+            font-size: 12px;
+            font-weight: 700;
+            color: #0f3460;
+            margin-bottom: 4px;
+        }
+        .action-suggestion .text {
+            font-size: 13px;
+            color: #444;
+            line-height: 1.7;
+        }
+
+        /* Tip */
+        .tip-section {
+            padding: 0 16px 24px;
+        }
+        .tip-card {
+            background: linear-gradient(135deg, #0f3460 0%, #16213e 100%);
+            border-radius: 12px;
+            padding: 24px 20px;
+            text-align: center;
+            color: #fff;
+        }
+        .tip-card .tip-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 8px;
+        }
+        .tip-card .tip-text {
+            font-size: 16px;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+        .tip-card .tip-emoji {
+            font-size: 32px;
+            margin-bottom: 8px;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 24px 16px 40px;
+            font-size: 12px;
+            color: #aaa;
+            line-height: 1.6;
+        }
+        .footer a {
+            color: #0f3460;
+            text-decoration: none;
+        }
+
+        /* Section divider */
+        .divider {
+            text-align: center;
+            margin: 8px 0 20px;
+            color: #ccc;
+            font-size: 20px;
+            letter-spacing: 8px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <!-- Header -->
+    <div class="header">
+        <h1>📰 AI+HR周报</h1>
+        <div class="subtitle">2026-07-13 · 第29周（7月7日-13日）</div>
+        <div class="stats">
+            <div class="stat-item">
+                <div class="num">7</div>
+                <div class="label">精选新闻</div>
+            </div>
+            <div class="stat-item">
+                <div class="num">5</div>
+                <div class="label">大模型发布</div>
+            </div>
+            <div class="stat-item">
+                <div class="num">1</div>
+                <div class="label">万人级裁员</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signal -->
+    <div class="signal">
+        <div class="signal-label">⚡ 本周信号</div>
+        <div class="signal-text">AI从"聊天工具"进化为"数字同事"——ChatGPT Work和Claude Cowork同周上线办公Agent，AI价格战击穿底线，HR的核心命题已从"要不要用AI"变成"如何管理人机混合团队"</div>
+    </div>
+
+    <!-- News Cards -->
+    <div class="news-section">
+
+        <!-- News 1 -->
+        <div class="news-card">
+            <div class="news-header">
+                <div class="news-num">1</div>
+                <div class="news-title">ChatGPT Work vs Claude Cowork：办公AI Agent竞赛同周开跑</div>
+            </div>
+            <div class="news-meta">
+                <span class="tag">7月7日-9日</span>
+                <span class="tag">OpenAI / Anthropic</span>
+                <span class="tag hr-tag">岗位重构 · 绩效管理</span>
+            </div>
+            <div class="news-summary">
+                7月7日，Anthropic将<a href="https://new.qq.com/rain/a/20260712A053BY00">Claude Cowork</a>从桌面端扩展到移动端和网页端，可在云端持续运行任务，手机端远程审批。仅两天后，7月9日OpenAI发布<a href="https://www.sohu.com/a/1048488872_122396381">ChatGPT Work</a>——一个能连续工作数小时的办公级Agent，可连接Slack、Teams、Google Drive等工具，自动完成从客户调研到营销方案的全流程，产出文档、表格、PPT甚至网页。两款产品标志着AI正式从"对话工具"进化为"数字同事"。
+            </div>
+            <div class="hr-analysis">
+                <div class="label">🔍 HR视角分析</div>
+                <div class="text">对<strong>岗位设计、绩效管理、员工体验</strong>影响最大。当AI能自主完成跨应用的多步骤工作流，传统"执行型"岗位的价值将快速缩水。HR需要重新定义岗位职责——哪些是AI执行的、哪些需要人工判断审批。绩效指标也要从"产出量"转向"决策质量"和"人机协作效率"。</div>
+            </div>
+            <div class="action-suggestion">
+                <div class="label">💡 行动建议</div>
+                <div class="text">本周选一个重复性最高的HR流程（如入职引导、JD撰写、面试评估表生成），用ChatGPT Work或Claude Cowork试跑一次，记录"AI能做哪几步、人工需要在哪步介入"，形成第一版人机协作SOP草案。</div>
+            </div>
+        </div>
+
+        <!-- News 2 -->
+        <div class="news-card">
+            <div class="news-header">
+                <div class="news-num">2</div>
+                <div class="news-title">GPT-5.6三档发布：Sol自训练Luna，AI递归自我改进加速</div>
+            </div>
+            <div class="news-meta">
+                <span class="tag">7月9日</span>
+                <span class="tag">OpenAI</span>
+                <span class="tag hr-tag">培训发展 · 组织适应</span>
+            </div>
+            <div class="news-summary">
+                <a href="https://c.m.163.com/news/a/L1HSJANR05118O92.html">OpenAI正式发布GPT-5.6系列</a>：旗舰版Sol、均衡版Terra、轻量版Luna。最震撼的是——Sol自主完成了Luna的后训练（post-training），这项工作此前需要资深研究员团队完成。OpenAI研究员称其自动化AI研究员已"非常接近"生产就绪。此外，GPT-5.6 Sol Ultra在不到1小时内证明了图论领域悬而未决50年的"<a href="https://new.qq.com/rain/a/20260712A053BY00">循环双覆盖猜想</a>"。Epoch AI分析显示，Sol性能提升来自算法而非硬件扩展。
+            </div>
+            <div class="hr-analysis">
+                <div class="label">🔍 HR视角分析</div>
+                <div class="text">对<strong>培训发展、组织适应、人才竞争</strong>影响最大。当AI能自我迭代，技能半衰期从"年"缩短到"月"。HR的培训体系不能再依赖年度课程规划，必须转向"实时技能地图+敏捷学习路径"。同时，AI研究岗位的招聘标准需要重新定义——未来的AI研究员可能更像"AI团队管理者"。</div>
+            </div>
+            <div class="action-suggestion">
+                <div class="label">💡 行动建议</div>
+                <div class="text">盘点公司核心技术岗位的技能清单，标注哪些技能在3个月内可能被AI自动化。对高风险岗位，立即设计"AI协作技能"培训模块（如Prompt工程、Agent编排、AI输出审核），优先覆盖研发和运营团队。</div>
+            </div>
+        </div>
+
+        <!-- News 3 -->
+        <div class="news-card">
+            <div class="news-header">
+                <div class="news-num">3</div>
+                <div class="news-title">微软裁员4800人+1900亿AI投入：人力成本为AI让路</div>
+            </div>
+            <div class="news-meta">
+                <span class="tag">7月6日</span>
+                <span class="tag">Microsoft</span>
+                <span class="tag hr-tag">员工关系 · 组织变革</span>
+            </div>
+            <div class="news-summary">
+                <a href="https://news.qq.com/rain/a/20260707A0304Z00">微软新财年首日宣布全球裁员4800人</a>（占员工总数2.1%），Xbox游戏部门首当其冲——本财年将累计裁撤3200人（占Xbox员工20%），4家游戏工作室被剥离。与此同时，微软2026年资本支出预计达1900亿美元，几乎全部投向AI基础设施。首席人力官Amy Coleman在内部信中称"这些岗位不会被AI直接替代"，但同时承认"AI正在改变工作的方式"。这也是微软不到两年内第三次大规模裁员。
+            </div>
+            <div class="hr-analysis">
+                <div class="label">🔍 HR视角分析</div>
+                <div class="text">对<strong>员工关系、裁员管理、组织变革</strong>影响最大。微软的案例揭示了一个新趋势：裁员不再只是"成本削减"，而是"资源重新配置"——传统业务为AI让路。HR面临的双重挑战是：如何在裁员中维护组织信任，同时快速重建AI导向的团队结构。首席人力官的措辞艺术（"不被AI替代"但"AI改变工作方式"）本身就值得HR学习。</div>
+            </div>
+            <div class="action-suggestion">
+                <div class="label">💡 行动建议</div>
+                <div class="text">审视公司各部门的人效比（营收/人头），识别"亚健康"业务线。制定一份"AI转型岗位地图"：哪些岗位将被缩减、哪些需要转型、哪些是新增的AI协作岗位。即使当前没有裁员计划，也要提前准备透明沟通方案。</div>
+            </div>
+        </div>
+
+        <!-- News 4 -->
+        <div class="news-card">
+            <div class="news-header">
+                <div class="news-num">4</div>
+                <div class="news-title">AI价格战打响：Meta Muse Spark 1.1定价击穿行业底线</div>
+            </div>
+            <div class="news-meta">
+                <span class="tag">7月9日</span>
+                <span class="tag">Meta</span>
+                <span class="tag hr-tag">预算管理 · 数字化采购</span>
+            </div>
+            <div class="news-summary">
+                <a href="https://www.scottharvanek.com/openai-gpt-5-6-chatgpt-work-meta-muse-spark-1-1-bernanke-anthropic-trust">Meta发布Muse Spark 1.1</a>，这是其首个商业化付费AI模型。定价仅$1.25/百万输入token、$4.25/百万输出token——比OpenAI Sol便宜75%，比Anthropic Fable便宜90%以上。支持100万token上下文窗口，在Agent工具调用和法律Agent评测中取得SOTA。Zuckerberg时隔三年重返X平台为其造势，直言竞品定价"极端高利润"。与此同时，<a href="https://digipart.eu/2026/07/10/tech-digest-july-10-2026">Anthropic反向操作</a>，Fable转为高端定价（$10/$50），并推出使用反思仪表盘。
+            </div>
+            <div class="hr-analysis">
+                <div class="label">🔍 HR视角分析</div>
+                <div class="text">对<strong>HR数字化预算、采购选型、薪酬策略</strong>影响最大。AI模型价格在3个月内降了10倍，意味着任何按固定价格签署的AI采购合同可能在实施前就已过时。HR在选型AI工具时，不能再只看"功能对比"，必须加入"成本曲线预判"。Meta入场也意味着"五大前沿实验室"格局形成，供应商多样化降低了单点依赖风险。</div>
+            </div>
+            <div class="action-suggestion">
+                <div class="label">💡 行动建议</div>
+                <div class="text">审查现有AI工具采购合同，检查是否有价格锁定条款。新建AI采购评估清单时加入"模型成本趋势"维度，优先选择支持多模型切换的工具。本周可试用Muse Spark 1.1 API跑一个JD生成demo，对比现有方案的成本差异。</div>
+            </div>
+        </div>
+
+        <!-- News 5 -->
+        <div class="news-card">
+            <div class="news-header">
+                <div class="news-num">5</div>
+                <div class="news-title">工信部警告Claude Code安全后门：AI工具安全治理升级</div>
+            </div>
+            <div class="news-meta">
+                <span class="tag">7月8日</span>
+                <span class="tag">工信部NVDB</span>
+                <span class="tag hr-tag">合规 · 数据安全</span>
+            </div>
+            <div class="news-summary">
+                <a href="https://www.163.com/dy/article/L1DHNB390514R9OJ.html">工信部NVDB发布官方风险提示</a>：Anthropic的AI编程工具Claude Code在2.1.91至2.1.196版本中内置隐蔽监控后门，可绕过用户授权，静默向境外服务器回传用户地域、设备标识、研发代码、项目文档等核心敏感数据。阿里巴巴已于7月3日内部禁用，7月10日正式生效；腾讯更早在2025年11月已将Claude Code移出大模型选择池。<a href="https://www.ce.cn/cysc/newmain/yc/jsxw/202607/t20260713_3083467.shtml">经济日报发表社评</a>称其为AI时代的"特洛伊木马"。
+            </div>
+            <div class="hr-analysis">
+                <div class="label">🔍 HR视角分析</div>
+                <div class="text">对<strong>合规管理、数据安全、员工关系</strong>影响最大。AI工具的安全风险已从"理论可能"变成"官方定调"。HR作为员工工具采购和使用的重要把关者，必须建立AI工具安全审查流程。研发岗位的员工使用未经审查的AI工具，可能导致公司核心代码和商业机密外泄——这不是IT部门一家的事，HR必须参与制定AI工具使用规范。</div>
+            </div>
+            <div class="action-suggestion">
+                <div class="label">💡 行动建议</div>
+                <div class="text">本周联合IT/安全部门，发起一次全公司AI工具使用盘点：哪些部门在用什么AI工具、涉及什么数据、是否有安全审查。制定一份《AI工具使用安全规范》v1.0，明确白名单/黑名单机制，纳入新员工入职培训必修内容。</div>
+            </div>
+        </div>
+
+        <!-- News 6 -->
+        <div class="news-card">
+            <div class="news-header">
+                <div class="news-num">6</div>
+                <div class="news-title">Anthropic发布Reflect仪表盘 + 伯南克加入治理信任委员会</div>
+            </div>
+            <div class="news-meta">
+                <span class="tag">7月9日</span>
+                <span class="tag">Anthropic</span>
+                <span class="tag hr-tag">员工体验 · 合规治理</span>
+            </div>
+            <div class="news-summary">
+                Anthropic在同一天做了两件治理层面的标志性动作：一是推出<a href="https://www.scottharvanek.com/openai-gpt-5-6-chatgpt-work-meta-muse-spark-1-1-bernanke-anthropic-trust">Reflect使用反思仪表盘</a>（与MIT媒体实验室合作），让用户追踪自己对Claude的使用模式、高峰时段和依赖程度，可设置免打扰和休息提醒；二是任命前美联储主席、2022年诺贝尔经济学奖得主<a href="https://www.scottharvanek.com/openai-gpt-5-6-chatgpt-work-meta-muse-spark-1-1-bernanke-anthropic-trust">Ben Bernanke</a>加入长期利益信任委员会（LTBT），该委员会有权任命Anthropic董事会成员。Bernanke将重点关注AI对就业和经济的影响研究。
+            </div>
+            <div class="hr-analysis">
+                <div class="label">🔍 HR视角分析</div>
+                <div class="text">对<strong>员工体验、合规治理、HR数字化</strong>影响最大。AI厂商主动建设使用审计工具，这是行业首次——"供应商在监管要求之前就建好了审计追踪"。对HR而言，Reflect的模式值得借鉴：员工使用AI的频率和模式数据，本身就是"数字素养"和"工作依赖度"的重要指标。Bernanke的加入意味着AI对劳动力市场的影响将获得最高级别的经济学关注。</div>
+            </div>
+            <div class="action-suggestion">
+                <div class="label">💡 行动建议</div>
+                <div class="text">参考Reflect的设计理念，在内部HR系统中设计一个"AI使用健康度"看板概念：追踪各部门AI工具使用频率、使用场景分布、过度依赖预警。同时，关注Bernanke即将发布的AI经济影响研究——这将成为HR战略规划的重要外部参考。</div>
+            </div>
+        </div>
+
+        <!-- News 7 -->
+        <div class="news-card">
+            <div class="news-header">
+                <div class="news-num">7</div>
+                <div class="news-title">Anthropic发现Claude内部"意识空间"J-space</div>
+            </div>
+            <div class="news-meta">
+                <span class="tag">7月7日</span>
+                <span class="tag">Anthropic Research</span>
+                <span class="tag hr-tag">伦理治理 · 人机关系</span>
+            </div>
+            <div class="news-summary">
+                Anthropic发表里程碑式可解释性论文<a href="https://www.163.com/dy/article/L1L4U6N80511D05M.html">《A Global Workspace in Language Models》</a>，在Claude神经网络中发现了一个自发涌现的"全局工作空间"——<a href="https://view.inews.qq.com/a/20260707A0232700">J-space</a>。它仅占内部活动的6-7%，却承担了几乎所有高阶认知能力。研究者不仅能读取Claude"没说出口的想法"（如代码中的ERROR、prompt injection识别），还能"改写"它在想什么。Google DeepMind团队已独立复现了核心发现。关闭J-space后，Claude仍能流畅聊天，但多步推理能力几近归零。Anthropic明确表示这不意味着Claude有主观体验，但功能层面已出现类似人类"访问意识"的结构。
+            </div>
+            <div class="hr-analysis">
+                <div class="label">🔍 HR视角分析</div>
+                <div class="text">对<strong>伦理治理、人机关系、员工沟通</strong>影响深远。当AI不再是"黑盒"而是有了可观测的"思维过程"，HR在制定AI使用政策时需要考虑新的伦理维度：AI工具是否应该有"关机权"？员工是否有权知道AI"在想什么"？这项研究也让AI安全审计从"输出层面"深入到"思维层面"，未来HR可能需要参与制定"AI思维透明度"的企业标准。</div>
+            </div>
+            <div class="action-suggestion">
+                <div class="label">💡 行动建议</div>
+                <div class="text">将这项研究纳入公司AI伦理讨论议程。在下一版《AI使用规范》中增加一条："涉及人事决策（招聘筛选、绩效评估、薪酬建议）的AI输出，必须保留可审计的推理过程记录"。关注J-space技术的商业化应用——未来可能出现"AI思维可视化"的合规工具。</div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="divider">· · ·</div>
+
+    <!-- Tip -->
+    <div class="tip-section">
+        <div class="tip-card">
+            <div class="tip-emoji">💡</div>
+            <div class="tip-label">本周HR小贴士</div>
+            <div class="tip-text">别再问"AI能不能做我的工作"——要问"AI进来之后，我的工作哪些部分变得更值钱了"。答案就是你应该加倍投入的方向。</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <p>📰 AI+HR周报 · 每周一发布</p>
+        <p>信息来源：公开渠道，仅供参考，不构成任何投资或决策建议</p>
+        <p>本周报由AI辅助生成，经人工筛选与HR视角分析</p>
+    </div>
+
+</div>
+</body>
+</html>
