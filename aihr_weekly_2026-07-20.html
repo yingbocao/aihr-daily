@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI+HR周报 | 2026年7月20日（第30周）</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --card-bg: #ffffff;
+    --text: #1a1a2e;
+    --text-secondary: #555;
+    --text-muted: #888;
+    --accent: #c62828;
+    --accent-light: #ffebee;
+    --border: #e8eaed;
+    --tag-bg: #e3f2fd;
+    --tag-text: #1565c0;
+    --header-bg: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    --shadow: 0 2px 12px rgba(0,0,0,0.06);
+    --radius: 12px;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  .container { max-width: 780px; margin: 0 auto; padding: 0 20px 40px; }
+
+  /* Header */
+  .header {
+    background: var(--header-bg);
+    color: #fff;
+    padding: 48px 20px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #c62828, #e53935, #ff7043, #c62828);
+  }
+  .header .week-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.25);
+    border-radius: 20px;
+    padding: 4px 16px;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+  }
+  .header h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; letter-spacing: 1px; }
+  .header .date { font-size: 14px; opacity: 0.8; }
+
+  /* Stats Row */
+  .stats-row {
+    display: flex;
+    gap: 12px;
+    margin: -24px 20px 24px;
+    position: relative;
+    z-index: 2;
+  }
+  .stat-card {
+    flex: 1;
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 16px;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .stat-card .num { font-size: 28px; font-weight: 700; color: var(--accent); }
+  .stat-card .label { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+
+  /* Signal Banner */
+  .signal-banner {
+    background: linear-gradient(135deg, #fff8e1, #fff3e0);
+    border-left: 4px solid #f57c00;
+    border-radius: 0 var(--radius) var(--radius) 0;
+    padding: 20px 24px;
+    margin-bottom: 24px;
+    box-shadow: var(--shadow);
+  }
+  .signal-banner .label { font-size: 12px; font-weight: 600; color: #e65100; letter-spacing: 1px; text-transform: uppercase; }
+  .signal-banner .text { font-size: 16px; color: #4e342e; margin-top: 6px; font-weight: 500; line-height: 1.6; }
+
+  /* News Card */
+  .news-card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    padding: 28px 28px 24px;
+    margin-bottom: 18px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: box-shadow 0.2s;
+  }
+  .news-card:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+  .news-card .card-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 14px;
+  }
+  .news-card .card-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px; height: 32px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .news-card .card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .news-card .card-source {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+  }
+  .news-card .card-source a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px dotted var(--accent);
+  }
+  .news-card .card-source a:hover { border-bottom-style: solid; }
+
+  .news-card .section-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 14px 0 6px;
+    letter-spacing: 0.5px;
+  }
+  .news-card .section-label::before {
+    content: '▸ ';
+  }
+  .news-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.75;
+    margin-bottom: 4px;
+  }
+  .news-card .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 14px;
+  }
+  .news-card .tag {
+    display: inline-block;
+    background: var(--tag-bg);
+    color: var(--tag-text);
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-weight: 500;
+  }
+
+  /* Tip Card */
+  .tip-card {
+    background: linear-gradient(135deg, #e8f5e9, #f1f8e9);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    margin: 28px 0 20px;
+    box-shadow: var(--shadow);
+  }
+  .tip-card .tip-label { font-size: 13px; font-weight: 700; color: #2e7d32; margin-bottom: 8px; }
+  .tip-card .tip-text { font-size: 16px; color: #1b5e20; line-height: 1.7; font-weight: 500; }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    padding: 24px 20px 40px;
+    color: var(--text-muted);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .footer a { color: var(--accent); text-decoration: none; }
+
+  /* Mobile */
+  @media (max-width: 600px) {
+    .header { padding: 36px 16px 32px; }
+    .header h1 { font-size: 22px; }
+    .stats-row { margin: -20px 12px 20px; gap: 8px; flex-wrap: wrap; }
+    .stat-card { padding: 12px 8px; }
+    .stat-card .num { font-size: 22px; }
+    .news-card { padding: 20px 18px 18px; }
+    .news-card .card-title { font-size: 16px; }
+    .news-card p { font-size: 14px; }
+    .container { padding: 0 12px 30px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="week-badge">第 30 周</div>
+  <h1>📰 AI+HR 周报</h1>
+  <div class="date">2026年7月13日 — 7月20日</div>
+</div>
+
+<div class="container">
+
+<div class="stats-row">
+  <div class="stat-card"><div class="num">7</div><div class="label">精选新闻</div></div>
+  <div class="stat-card"><div class="num">4</div><div class="label">政策新规</div></div>
+  <div class="stat-card"><div class="num">6</div><div class="label">HR模块影响</div></div>
+</div>
+
+<div class="signal-banner">
+  <div class="label">🔔 本周信号</div>
+  <div class="text">
+    AI治理从"框架讨论"进入"规则落地"——中国AI拟人化新规生效、欧盟云主权法案刊宪、WAIC发布AI伦理行动计划，HR的核心命题已从"AI能不能用"升级为"AI怎么合规地用"。与此同时，SAP全面转型AI计价模式、英伟达工程师从写代码转向搭智能体，标志着AI正在从HR的"外挂工具"变成需要纳入预算、岗位设计、合规审查的"组织基础设施"。
+  </div>
+</div>
+
+<!-- News 1 -->
+<div class="news-card">
+  <div class="card-header">
+    <div class="card-num">1</div>
+    <div class="card-title">中国AI拟人化交互新规7月15日生效：豆包、通义千问下线人格化功能</div>
+  </div>
+  <div class="card-source">
+    📅 7月15日 · 来源：<a href="http://bgimg.ce.cn/cysc/newmain/yc/jsxw/202607/t20260715_3086626.shtml" target="_blank">经济参考报</a> · <a href="https://www.toutiao.com/article/7662347655011385856/" target="_blank">今日头条</a>
+  </div>
+  <p>国家网信办等五部门联合发布的《人工智能拟人化互动服务管理暂行办法》7月15日正式施行。新规要求AI服务每次交互开始时向用户披露AI身份，禁止AI模拟自然人人格特征、思维模式及沟通风格进行持续性情感交互，禁止诱导情感依赖或沉迷。字节跳动豆包、阿里通义千问已确认下线人格化Agent、用户自定义人设及关系框架功能。这是全球首个针对"AI人格化"的专项监管。</p>
+  <div class="section-label">HR视角分析</div>
+  <p>直接影响<strong>员工体验、合规管理和组织文化</strong>三个模块。许多HR团队正在试用或已部署AI员工助手（入职引导、心理关怀、7×24答疑），这些场景恰好触及"拟人化互动"红线。HR需要立即审查：内部AI员工助手是否有人设/性格设定？是否涉及持续性情感交互？尤其是EAP心理关怀类AI工具，合规风险最高。</p>
+  <div class="section-label">行动建议</div>
+  <p>① 本周盘点公司内所有面向员工的AI交互工具（客服机器人、入职助手、心理关怀AI等），逐一对照《办法》六条禁止事项自查；② 在HR AI工具采购/续约时，将"拟人化合规"纳入供应商评估清单；③ 与法务/合规部门联合制定《内部AI交互工具使用规范》，明确身份披露和交互边界。</p>
+  <div class="tags">
+    <span class="tag">合规</span><span class="tag">员工体验</span><span class="tag">组织文化</span>
+  </div>
+</div>
+
+<!-- News 2 -->
+<div class="news-card">
+  <div class="card-header">
+    <div class="card-num">2</div>
+    <div class="card-title">WAIC 2026：中国发布国际AI伦理治理行动计划与AI Agent互联互通倡议</div>
+  </div>
+  <div class="card-source">
+    📅 7月18日 · 来源：<a href="https://mobile.chinadaily.com.cn/html5/2026-07/18/content_004_6a5a742aed50be540e7346fb.htm" target="_blank">China Daily</a>
+  </div>
+  <p>2026世界人工智能大会（WAIC）期间，工信部牵头发布《国际AI伦理治理行动计划》，聚焦全生命周期伦理治理、风险分级防控、敏捷治理机制建设及产业生态协同。发改委同步发布AI开放合作行动计划，涵盖高质量数据供给、算力可及性、开源发展、数字人才培养等八大领域。网信办发布AI Agent互信互联互通全球合作倡议，推动Agent身份识别、跨平台互操作等底层技术标准。</p>
+  <div class="section-label">HR视角分析</div>
+  <p>对<strong>HR数字化、合规治理和培训发展</strong>影响深远。WAIC释放的信号是：中国正在构建从伦理治理到产业落地的AI完整制度框架。对HR而言意味着两件事：一是公司引入AI工具时，HR需有能力判断其是否合规；二是"数字人才培养"已上升为国家级行动，HR的学习发展预算应开始向AI素养培训倾斜。</p>
+  <div class="section-label">行动建议</div>
+  <p>① 关注发改委"数字人才培养"行动细则，看是否有补贴/资源可申请；② 将WAIC发布的AI治理框架纳入HR团队内部学习（至少了解风险分级、伦理审查的基本逻辑）；③ 若公司使用多个AI Agent，"Agent互信互联互通"标准未来将影响HR系统集成选型，建议提前关注。</p>
+  <div class="tags">
+    <span class="tag">HR数字化</span><span class="tag">合规治理</span><span class="tag">培训发展</span>
+  </div>
+</div>
+
+<!-- News 3 -->
+<div class="news-card">
+  <div class="card-header">
+    <div class="card-num">3</div>
+    <div class="card-title">SAP全面转型AI自主企业：暂停非核心招聘，推出AI按量计费模式</div>
+  </div>
+  <div class="card-source">
+    📅 7月上旬 · 来源：<a href="http://sapeclub.com/forum.php?mod=viewthread&tid=3788" target="_blank">SAP俱乐部周报</a>
+  </div>
+  <p>SAP 7月初宣布新战略：暂停全品类普通岗位招聘，仅保留AI核心技术及智能产品研发岗；全面压缩非必要商务差旅与外包成本，将释放的资金全部投入AI赛道，推进"自主企业（Autonomous Enterprise）"战略。CEO Christian Klein亲自接管核心AI项目"Project Fuji"。同时SAP推出行业创新的AI Units按量计费模式——以客户实际AI功能调用量、业务落地成效为核心计费依据，替代传统软件授权/订阅固定收费。</p>
+  <div class="section-label">HR视角分析</div>
+  <p>直接影响<strong>HR数字化和薪酬预算</strong>模块。SAP SuccessFactors是国内大量企业的HR核心系统，AI按量计费模式将改写HR系统的预算逻辑——从"年付订阅"变为"按使用付费"。同时，SAP自身"暂停非核心招聘、只招AI岗"的做法本身就是一面镜子：当顶级企管软件公司做出这种选择时，其他企业HR也该重新审视自己的招聘结构。</p>
+  <div class="section-label">行动建议</div>
+  <p>① 若公司使用SAP SuccessFactors，立即联系供应商了解AI Units计费对其HR模块定价的影响，更新2027年HR系统预算；② 对标SAP做法，审视自身招聘需求中"AI相关岗"占比是否合理——如果连SAP都只招AI岗，你的公司是否也该增加AI人才配置？</p>
+  <div class="tags">
+    <span class="tag">HR数字化</span><span class="tag">薪酬预算</span><span class="tag">招聘</span>
+  </div>
+</div>
+
+<!-- News 4 -->
+<div class="news-card">
+  <div class="card-header">
+    <div class="card-num">4</div>
+    <div class="card-title">微软MAI模型开始在Excel/Outlook替换OpenAI：AI供应链加速自主化</div>
+  </div>
+  <div class="card-source">
+    📅 7月中旬 · 来源：<a href="https://dev.to/hiroki-ii-ai/ai-daily-digest-july-20-2026-gpt-56-worldwide-launch-claude-fable-5-back-online-meta-muse-1bp0" target="_blank">dev.to AI Daily Digest</a>
+  </div>
+  <p>微软已开始在Excel和Outlook中使用自研MAI-Thinking 1模型替换OpenAI和Anthropic的第三方AI模型。据Bloomberg报道，MAI-Thinking 1在编码基准测试中已达到Claude Opus 4.8水平。每周已有数万次AI提示请求完全由微软自研模型处理。Mustafa Suleyman领导的AI团队正在加速降低对第三方API的依赖，MAI在Office生态中的部署被视为"滩头阵地"，后续可能扩展至Copilot、Azure AI及整个Microsoft 365。</p>
+  <div class="section-label">HR视角分析</div>
+  <p>影响<strong>HR数字化和员工体验</strong>。微软Office是全球最广泛使用的办公工具，底层AI模型的更换意味着：员工日常使用Copilot/Excel AI功能时的体验、数据流向、合规策略都将发生变化。HR团队需要理解这种变化对员工数据隐私、内部AI使用政策的影响。更深层次的是，这标志着"AI供应链多元化"成为企业新常态——单一供应商绑定风险正在被头部企业主动化解。</p>
+  <div class="section-label">行动建议</div>
+  <p>① 关注公司IT部门是否收到微软AI模型变更通知，了解对员工数据隐私策略的影响；② 在HR AI工具选型时，开始评估供应商的"模型供应链弹性"——是否过度依赖单一模型厂商？③ 更新员工AI使用指南，明确不同Office场景下AI功能的数据处理方式。</p>
+  <div class="tags">
+    <span class="tag">HR数字化</span><span class="tag">员工体验</span><span class="tag">数据安全</span>
+  </div>
+</div>
+
+<!-- News 5 -->
+<div class="news-card">
+  <div class="card-header">
+    <div class="card-num">5</div>
+    <div class="card-title">黄仁勋：英伟达工程师从"写代码"转向"搭智能体"，AI重构职场核心技能</div>
+  </div>
+  <div class="card-source">
+    📅 7月9日 · 来源：<a href="https://www.toutiao.com/article/7660506595465429542/" target="_blank">工联网/今日头条</a>
+  </div>
+  <p>英伟达CEO黄仁勋近期透露，旗下软件工程师群体更倾向于构建AI智能体而非传统编码。AI已能替代大量重复性编码工作，工程师工作重心正转向智能体搭建、基准测试设计与安全护栏设置。黄仁勋反驳"AI取代白领"的担忧，指出AI正在创造大量新岗位。这一变化标志着职场核心技能正从"代码编写"转向"智能体架构设计"和"大模型应用集成"。</p>
+  <div class="section-label">HR视角分析</div>
+  <p>对<strong>招聘、培训发展和岗位设计</strong>三大模块产生根本性影响。当英伟达——全球AI基础设施的核心供应商——的工程师都在从"写代码"转向"搭智能体"，传递的是一个不可逆的信号：所有知识型岗位都将经历类似的技能重构。HR需要思考：公司的岗位描述是否还停留在"熟练掌握XX软件"？培训体系是否还聚焦传统技能而非AI协同能力？</p>
+  <div class="section-label">行动建议</div>
+  <p>① 本周挑选3-5个核心岗位，在JD中新增一项"AI工具协同能力"要求（具体化到该岗位场景，不要笼统写"会用AI"）；② 推动培训部门引入"AI Agent搭建"或"AI工作流编排"基础课程（可用扣子/Dify等低门槛工具入门）；③ 与业务负责人讨论：哪些岗位的日常工作可被AI Agent部分接管？腾出的人力转向何处？</p>
+  <div class="tags">
+    <span class="tag">招聘</span><span class="tag">培训发展</span><span class="tag">岗位设计</span>
+  </div>
+</div>
+
+<!-- News 6 -->
+<div class="news-card">
+  <div class="card-header">
+    <div class="card-num">6</div>
+    <div class="card-title">ADP 2026研究：全球仅22%员工认为岗位安全，AI引发"岗位拆分"与技能信心危机</div>
+  </div>
+  <div class="card-source">
+    📅 7月上旬 · 来源：<a href="https://www.chinadaily.com.cn/a/202607/03/WS6a477aa8a310986e2b4636c4.html" target="_blank">China Daily</a> · <a href="https://www.thetalentworld.co.uk/blog/ai-in-hr-the-tools-trends-and-strategic-shift-defining-2026" target="_blank">The Talent World</a>
+  </div>
+  <p>ADP在夏季达沃斯发布的People at Work 2026研究显示：全球仅22%员工认为自己的岗位不会被淘汰（亚太区18%），仅26%认为具备晋升所需技能（亚太区22%）。中国73%员工每周多次使用AI，超四分之一每天使用。ADP提出"岗位大拆分（Great Job Unbundling）"概念：AI将传统岗位拆解为独立任务，工作重心从"职位"转向"任务及创造的价值"。感到岗位安全的员工敬业度高6倍、离职率低一半、高生产力可能性高3.3倍。</p>
+  <div class="section-label">HR视角分析</div>
+  <p>对<strong>员工关系、培训发展和绩效管理</strong>产生紧迫影响。22%的岗位安全感是一个警报级别数据——意味着近八成员工活在"可能被替代"的焦虑中。HR面临的双重挑战：一是如何通过透明的岗位演进沟通缓解焦虑，二是如何将"岗位大拆分"理论落地为以任务和技能为中心的岗位设计、绩效评估体系。</p>
+  <div class="section-label">行动建议</div>
+  <p>① 本周发起一次匿名"AI焦虑温度计"内部快速调研（3-5个问题），了解员工对岗位安全的真实感受；② 针对焦虑度最高的团队，组织一场"岗位如何与AI协作"的透明沟通会，由HR和管理者共同说明公司AI策略；③ 在下一轮绩效评估中试点加入"AI协同贡献度"维度——员工如何利用AI提升工作质量。</p>
+  <div class="tags">
+    <span class="tag">员工关系</span><span class="tag">培训发展</span><span class="tag">绩效管理</span>
+  </div>
+</div>
+
+<!-- News 7 -->
+<div class="news-card">
+  <div class="card-header">
+    <div class="card-num">7</div>
+    <div class="card-title">欧盟《云与AI发展法案》正式刊宪 + 中国十五五规划：构建AI就业应对体系</div>
+  </div>
+  <div class="card-source">
+    📅 7月15日/7月13日 · 来源：<a href="https://www.toutiao.com/article/7662347655011385856/" target="_blank">今日头条</a> · <a href="https://www.toutiao.com/article/7661843098347045422/" target="_blank">中国青年网</a>
+  </div>
+  <p>欧盟《云与AI发展法案》（CADA）7月15日正式刊宪，首创四级云主权评估框架——从数据驻留到欧盟所有权层层递进，公共部门必须按此框架采购云服务，最高层级要求欧盟所有权、控制权及软件供应链完全透明。国内方面，"十五五"规划明确要求综合应对AI对就业的影响，国务院进一步部署建立"就业友好型发展方式"和AI就业影响评估机制，加快构建岗位替代预警、技能转换支持和劳动权益保障体系。</p>
+  <div class="section-label">HR视角分析</div>
+  <p>对<strong>合规管理、招聘和员工关系</strong>影响显著。欧盟CADA对跨国企业HR有直接影响：使用海外HR SaaS（如Workday、SAP SF）的欧洲分公司需审查是否符合最高层级云主权要求。国内"十五五"AI就业应对体系则要求HR从"被动救火"转向"前瞻规划"——未来可能面临更严格的岗位替代申报、员工转岗培训等合规义务。</p>
+  <div class="section-label">行动建议</div>
+  <p>① 若有欧洲业务，与法务确认HR系统是否符合CADA四级框架要求——尤其是员工数据存储和访问控制；② 关注人社部后续出台的AI岗位影响评估细则，提前建立内部"岗位AI替代风险评估表"；③ 将"AI转岗培训预算"纳入2027年HR预算规划——十五五明确将AI紧缺工种纳入补贴目录，留意可申请的政策资源。</p>
+  <div class="tags">
+    <span class="tag">合规</span><span class="tag">招聘</span><span class="tag">员工关系</span>
+  </div>
+</div>
+
+<!-- Tip -->
+<div class="tip-card">
+  <div class="tip-label">💡 本周HR小贴士</div>
+  <div class="tip-text">
+    合规不是AI的刹车，而是AI的方向盘。与其等新规来了手忙脚乱，不如这周就建一个"AI合规自查清单"——从拟人化交互、数据主权、岗位替代申报三个维度，把公司用到的AI工具全部过一遍。先知道哪里可能踩线，才知道哪里可以加速。
+  </div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+  <p>📋 本报告由 AI+HR 智能助手自动生成</p>
+  <p>信息来源：公开渠道，仅供参考，不构成任何决策建议</p>
+  <p>© 2026 AI+HR Weekly · 第 30 周 · <a href="https://yingbocao.github.io/aihr-daily/" target="_blank">GitHub Pages</a></p>
+</div>
+
+</div>
+</body>
+</html>
